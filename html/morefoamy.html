@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+text {
+  font: bold 12px monospace;
+}
+
+.enter {
+  fill: black;
+}
+
+.update {
+  fill: #333;
+}
+
+.dots{
+  stroke-width: 0px;
+  fill: #000000;
+  fill-opacity: 0.8;
+}
+
+</style>
+<body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="lazy_college_senior.js"></script>
+<script src="http://bost.ocks.org/mike/fisheye/fisheye.js?0.0.3"></script>
+
+<script src="freshman.js"></script>
+<!--script src="meme_of_the_moment.js"></script-->
+<script src="fry.js"></script>
+
+<script>
+
+var width = 1200,
+    height = 300,
+    charge_multiplier = 1,
+    beginning = 1293858482,
+    timewidth = 92410246,
+    vizwidth = width/2,
+    horizontalBorder = 100;
+
+function sortByKey(array, key) {
+    return array.sort(function(a, b) {
+        var x = a[key]; var y = b[key];
+        return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+    });
+}
+
+function process(rawAnimals, toSort){
+  // Convert Raw Data (timestamp, karma, etc) 
+  // into visualization dependent parameters
+  var animals = [];
+  for (var key in rawAnimals) {
+    t = (rawAnimals[key]["created"]-beginning)/timewidth;
+    s = 6*Math.max(rawAnimals[key]["score"]/1000,0.02);
+    xval = t*(width-2*horizontalBorder)
+           -vizwidth+horizontalBorder
+    animals.push({"ts":rawAnimals[key]["created"],
+                  "t":xval,
+                  "s":Math.pow(s,0.5)*1.6,
+                  "x":xval,
+                  "y":(Math.random()-0.5)*150,
+                  "id" : key}); 
+    } 
+    sortByKey(animals, "t")
+    animals.reverse()
+  return animals;
+}
+
+function updateList(animals, newData) {
+  
+  newdat = process(newData);
+  randinti = (newdat.length-animals.length > 1000);
+
+  for (var i = 0; i < newdat.length; i++) {
+    if (i < animals.length) {
+      animals[i].t  = newdat[i].t;
+      animals[i].s  = newdat[i].s;
+      animals[i].id = newdat[i].id;
+      if (randinti){
+        animals[i].x  = newdat[i].t,
+        animals[i].y  - (Math.random()-0.5)*150   
+        animals[i].px  = newdat[i].t,
+        animals[i].py  - (Math.random()-0.5)*150 
+      }       
+    } else {
+      animals[i] = {"ts":newdat[i].ts,
+                    "t" :newdat[i].t,
+                    "s" :newdat[i].s,
+                    "id":newdat[i].id,
+                    "x" :newdat[i].t,
+                    "y" :(Math.random()-0.5)*150}
+    }
+  }
+  
+  animals.splice(i,animals.length)    
+
+}
+
+var animals = process(rawAnimals);
+
+// Set Global Coordinates
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height+20)
+    .style("margin-left","auto")
+    .style("margin-right","auto")
+    .style("margin-top","1cm")    
+    .style("display","block")    
+    .append("g")
+    .attr("transform", "translate(" + (width/2)  + "," 
+                                    + (height/2) + ")");
+
+var fisheye = d3.fisheye.circular()
+    .radius(100)
+    .distortion(50);
+
+svg.on("mousemove", function() {
+  /*
+  console.log("hi")
+  fisheye.focus(d3.mouse(this));
+  text.each(function(d) { d.fisheye = fisheye(d); })
+    .attr("cx", function(d) { return d.fisheye.x; })
+    .attr("cy", function(d) { return d.fisheye.y; })
+    //.attr("r", function(d) { return d.fisheye.z ; });
+  */
+});
+
+svg.append('rect')
+    .attr('x',-vizwidth).attr('y',-height/2)
+    .attr('width',vizwidth*2).attr('height',height)
+    .attr('fill','white')
+    .attr('stroke','black').attr('stroke-width',2)
+    //.attr('stroke-dasharray','8,8') 
+
+svg.append('circle')
+    .attr('cx',0)
+    .attr('cy',-130)
+    .attr('r',10)
+    .attr("fill","blue")
+    .on("click", function(d){
+      update2();
+    });
+
+dates = d3.time.scale()
+        .domain([1293858482*1000,(1293858482+92410246)*1000])
+        .range([-vizwidth,vizwidth])
+        .nice()
+tick = dates.ticks(16);
+
+svg.selectAll("axis")
+  .data(dates.ticks(24))
+  .enter()
+  .append('line')
+    .attr('x1',dates)
+    .attr('x2',dates)
+    .attr('y1',-150)
+    .attr('y2',150)
+    .attr('stroke-width','0.5')
+    .attr('stroke-dasharray','5,5') 
+    .attr('stroke','#000000')
+
+svg.selectAll("axis")
+  .data(dates.ticks(8))
+  .enter()
+  .append("text")
+    .attr("x", dates)
+    .attr("y", 165)
+    .attr("text-anchor", "middle")
+    .text(function(d,i) {
+      if (i != 0 && i != 13){
+        return dates.tickFormat(10)(d);
+      } else {
+        return '';
+      }});
+
+/*
+var vlines = d3.range(-vizwidth,vizwidth,50)
+
+svg.selectAll("text").
+	data(vlines)
+	.enter()
+	.append('line')
+	.attr('x1',function(d) {return d;})
+	.attr('x2',function(d) {return d;})
+	.attr('y1',-150)
+	.attr('y2',150)
+	.attr('stroke-width','0.5')
+	.attr('stroke-dasharray','5,5')	
+	.attr('stroke','#000000');
+*/
+
+mut = 1.2;
+function returnToTimeline(alpha) {
+  return function(d) {
+    var x = d.x - d.t;
+        y = d.y - 0,
+        l = (x*x + y*y),
+  l = alpha*mut*1.7*Math.pow(d.s*0.2,0)*1.2// + alpha*Math.abs(y)*0.005;
+  d.x -= x *= l*1.5*vforce;
+  d.y -= y *= l;
+  };
+}
+
+
+tcharge = 200*mut;
+
+var force = d3.layout.force()
+	.charge(function(d, i) { 
+      return Math.min(-tcharge*Math.pow(d.s/8,2.2),-2) 
+    })
+  .nodes(animals)
+	.size([width,0])
+	.gravity(0)
+
+var text = svg.selectAll("text").data(animals);
+
+Array.prototype.clear = function() {
+  while (this.length > 0) {
+    this.pop();
+  }
+};
+
+function update() {
+
+  // Only apply to objects which were just inserted 
+  text.enter().append("circle");
+  
+  text
+  	.attr("r",function(d, i) { return 0 })
+  	.attr("style","dots")
+  	//.call(force.drag)
+  	.on("mouseover", function(d){
+      var date = new Date(d.ts*1000);
+      console.log(date)
+  		d3.select(this).style("fill", "red");
+  		})
+  	.on("click", function(d){
+  			window.open(
+          "http://www.reddit.com/r/AdviceAnimals/" 
+          + d.id,'_blank');
+  		})
+    .on("mouseout", function(){
+        d3.select(this).style("fill", "black");
+      })
+    .transition()
+      .duration(function(d,i) {return 0.5*(animals.length -i)} )
+      .attr("r",function(d, i) { return d.s });
+
+  text.exit().remove();
+  force.start();
+
+}
+
+var current = 0;
+
+function update2() {
+
+  if (current == 0){
+    updateList(animals, lazy);
+    current = 1;
+  } else {
+    updateList(animals, rawAnimals);
+    current = 0;
+  }
+
+  text = text.data(force.nodes(), 
+    function(d) {return d.id; });
+
+  text.exit()
+    .transition()
+      .duration(function(d,i) {return (0.1)*i} )
+      .attr("r",function(d, i) { return 0 })
+    .remove();  
+  // Only apply to objects which were just inserted 
+
+  text.enter().append("circle").attr("r",0)
+  // Apply to all objects
+  text
+    .attr("style","dots")
+    .on("mouseover", function(d){
+      d3.select(this).style("fill", "red");
+      })
+    .on("click", function(d){
+        window.open(
+          "http://www.reddit.com/r/AdviceAnimals/" 
+          + d.id,'_blank');
+      })
+    .on("mouseout", function(){
+        d3.select(this).style("fill", "black");
+      })
+    .transition()
+      .duration(function(d,i) {
+        return  (10)*Math.sqrt(i)} )
+      .attr("r",function(d, i) { return d.s });
+
+  force.start()
+
+}
+
+update()
+//force.start();
+vforce = 1
+
+force.on("tick", function(e) {
+
+  s = 0;
+  for(var i = 0; i < animals.length; i++){
+    var dx = animals[i].x - animals[i].px;
+    var dy = animals[i].y - animals[i].py;
+    var d = Math.sqrt(dx*dx + dy*dy); 
+    s += d;
+  }
+  s = s/animals.length
+
+	text
+	  .each(returnToTimeline(e.alpha))
+    .attr("cx", function(d) { return d.x; })
+    .attr("cy", function(d) { return d.y; });	  
+});
+
+/*
+Slider
+*/
+
+var slidersvg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", 50)
+    .style("margin-left","auto")
+    .style("margin-right","auto")
+    .style("display","block")        
+    .attr("transform", "translate(" + (width/2)  + "," 
+                                    + (100/2) + ")");
+
+var sliderx = width/4,
+    slidery = 20;
+
+var x = d3.scale.linear()
+    .domain([1, 3])
+    .range([0, vizwidth])
+    .clamp(true);
+
+var brush = d3.svg.brush()
+    .x(x)
+    .extent([0, 0])
+    .on("brush", brushed);
+
+slidersvg.append("g")
+    .attr("class", "axis")
+    .attr("transform", "translate("+sliderx+","+slidery+")")
+    .call(d3.svg.axis()
+      .scale(x)
+      .tickSize(0)
+      .tickPadding(12))
+
+var slider = slidersvg.append("g")
+    .call(brush);
+
+var handle = slider.append("circle")
+    .attr("r", 5)
+    .attr("fill","black")
+    .attr("transform", "translate("+sliderx+","+slidery+")");;
+
+function brushed() {
+	
+  var value = x.invert(d3.mouse(this)[0]-sliderx);
+  brush.extent([value, value]);
+  handle.attr("cx", x(value));
+
+  vforce = value;
+  force.start()
+}
+</script>
