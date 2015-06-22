@@ -33,7 +33,7 @@ for filename in os.listdir(thumbnaildir):
         compressedThumbs.append(compress(img))
         fileNames.append(filename)
         count = count + 1
-        if count > 1000000000:
+        if count > 1e100:
             # Use if you wish to limit the thumbnails processed
             break
         if count % 1000 == 0:
