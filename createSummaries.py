@@ -45,6 +45,9 @@ for line in f:
         mId = data['id'] + ".jpg"
         thumbs[mId]['title'] = data['title']
         thumbs[mId]['url'] = data['url']
+        thumbs[mId]['ups'] = data['ups']
+        thumbs[mId]['downs'] = data['downs']
+        thumbs[mId]['created'] = data['created']
     if i % 10000==0:
         print "Progress at" , i
         gc.collect()
