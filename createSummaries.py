@@ -11,26 +11,12 @@ Step 1
 Generate Summary of Compressed Thumbnails
 """
 
-def toSummary(compimage):
-    coord   = array(compimage,dtype=int8)[:,1:]
-    density = array(compimage,dtype=single)[:,0]
-    return {"coord": coord, "density":density}
-
-
-def fromSummary(thumb):
-    coord = thumb['coord']
-    density = thumb['density']
-    out = []
-    for i in range(len(thumb['density'])):
-        out.append((density[i],) + tuple(coord[i]))
-    return out
-
 compressedThumbs = []
 fileNames = []
 for filename in os.listdir(thumbnaildir):
     try:
         img = data.load(thumbnaildir + filename)
-        compressedThumbs.append(compress(img))
+        compressedThumbs.append(summary(img))
         fileNames.append(filename)
         count = count + 1
         if count > 1e100:
@@ -60,7 +46,7 @@ for line in f:
         thumbs[mId]['title'] = data['title']
         thumbs[mId]['url'] = data['url']
     if i % 10000==0:
-        print "Progress at" , i 
+        print "Progress at" , i
         gc.collect()
 
 fp = open(r'D:\memeproject\ThumbsnailSummaryTitles','w')

@@ -15,7 +15,7 @@ for templateFile in os.listdir(r'D:\memeproject\templates'):
     im = array(transform.resize(im, [70,70])*255,dtype=uint8);
     
     out = {'Title': memeName}
-    out.update(toSummary(compress(im)))
+    out.update(toSummary(summary(im)))
     templateData.append(out)
     
     i = i + 1

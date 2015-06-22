@@ -23,7 +23,7 @@ def seg(img,a,b,c):
 """
 Compress Image into a discrete measure on R^5, (r,g,b,x,y)
 """
-def compress(img):
+def summary(img):
     [image,m,d,lx,ly,dim] = seg(img,1,11,40) # Using 1,11,20
     o = []
     for cluster in range(0,d):
@@ -34,8 +34,8 @@ def compress(img):
             uint8(imagel[i[0],j[0],0]), 
             uint8(imagel[i[0],j[0],1]), 
             uint8(imagel[i[0],j[0],2]),
-            1*int8(mean(i)), 
-            1*int8(mean(j))))
+            1*uint8(mean(i)),
+            1*uint8(mean(j))))
             
     if debug:
         print "debug"
@@ -64,3 +64,21 @@ def dist(im1, im2):
     cv.Convert(cv.fromarray(i1), sig1)
     cv.Convert(cv.fromarray(i2), sig2)
     return cv.CalcEMD2(sig1, sig2, cv.CV_DIST_L1)
+
+"""
+Helper functions
+"""
+
+def toSummary(compimage):
+    coord   = array(compimage,dtype=uint8)[:,1:]
+    density = array(compimage,dtype=single)[:,0]
+    return {"coord": coord, "density":density}
+
+
+def fromSummary(thumb):
+    coord = thumb['coord']
+    density = thumb['density']
+    out = []
+    for i in range(len(thumb['density'])):
+        out.append((density[i],) + tuple(coord[i]))
+    return out
