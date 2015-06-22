@@ -8,7 +8,7 @@ def ll(t):
 def whichMeme(im, templates):
     di = []
     for template in templates:
-        di.append(dist.d(ll(im), ll(template)))
+        di.append(dist.dist(ll(im), ll(template)))
     di = array(di)
     di = exp(-di/10)/sum(exp(-di/10))
     p = []

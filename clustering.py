@@ -17,14 +17,14 @@ imageFileName = r'D:\memeproject\templates\Awkward_Penguin.jpg'
 
 def compareAll(imageFileName, thumbs):
     im = data.load(imageFileName)
-    template_summary = comp(uint8(transform.resize(im, [70,70,3])*255))
+    template_summary = compress(uint8(transform.resize(im, [70,70,3])*255))
     
     count = 0
     comparisons = []
     for thumb in thumbs:
         compressed_thumb = fromSummary(thumb)
         count = count + 1
-        comparisons.append((d(template_summary, compressed_thumb),i))
+        comparisons.append((dist(template_summary, compressed_thumb),i))
         
         if count > 1000000:
             break

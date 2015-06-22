@@ -7,8 +7,6 @@ from numpy import *
 import pickle
 from matplotlib.pyplot import *
 
-thumbnaildir = 'D:\\memeproject\\thumbnails\\'
-
 debug = 0
 count = 0
 
@@ -23,9 +21,9 @@ def seg(img,a,b,c):
     return l
     
 """
-Compress Image into a discrete measure on R^5
+Compress Image into a discrete measure on R^5, (r,g,b,x,y)
 """
-def comp(img):
+def compress(img):
     [image,m,d,lx,ly,dim] = seg(img,1,11,40) # Using 1,11,20
     o = []
     for cluster in range(0,d):
@@ -54,9 +52,9 @@ Return distance between two (compressed) images.
 Usage
 > im1 = data.load(thumbnaildir + '10007b.jpg')
 > im2 = data.load(thumbnaildir + '10022k.jpg')
-> d(comp(im1), comp(im2))
+> dist(compress(im1), compress(im2))
 """
-def d(im1, im2):
+def dist(im1, im2):
     i1 = array(im1)
     i2 = array(im2)
     i1[:,4:6] = i1[:,4:6]*0.5
@@ -66,44 +64,3 @@ def d(im1, im2):
     cv.Convert(cv.fromarray(i1), sig1)
     cv.Convert(cv.fromarray(i2), sig2)
     return cv.CalcEMD2(sig1, sig2, cv.CV_DIST_L1)
-
-def toSummary(compimage):
-    coord   = array(compimage,dtype=int8)[:,1:]
-    density = array(compimage,dtype=single)[:,0]
-    return {"coord": coord, "density":density}
-
-
-def fromSummary(thumb):
-    coord = thumb['coord']
-    density = thumb['density']
-    out = []
-    for i in range(len(thumb['density'])):
-        out.append((density[i],) + tuple(coord[i]))
-    return out
-
-"""
-Generate Summary of Compressed Thumbnails
-"""
-if __name__ == "__main__":
-    compressedThumbs = []
-    fileNames = []
-    for filename in os.listdir(thumbnaildir):
-        try:
-            img = data.load(thumbnaildir + filename)
-            compressedThumbs.append(comp(img))
-            fileNames.append(filename)
-            count = count + 1
-            if count > 1000000000:
-                break
-            if count % 1000 == 0:
-                print "At " + str(count)
-        except:
-            pass
-    
-    o = {}
-    for i in range(0,len(compressedThumbs)):
-        o[fileNames[i]] = toSummary(compressedThumbs[i])
-    
-    fp = open('D:\\memeproject\\thumbnailSummaryTitlesRGB2','w')
-    pickle.dump(o, fp)
-    fp.close()
