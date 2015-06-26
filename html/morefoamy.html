@@ -32,6 +32,7 @@ text {
 <script src="freshman.js"></script>
 <!--script src="meme_of_the_moment.js"></script-->
 <script src="fry.js"></script>
+<script src="templateinfo.js"></script>
 
 <script>
 
@@ -80,7 +81,11 @@ function process(rawAnimals, toSort){
 fry      = process(rawFry)
 freshman = process(rawFreshman)
 
-function updateList(animals, newdat) {
+
+var animals = process(rawLazy);
+
+// variable [animals] is captured from the main scope.
+function updateList(newdat) {
   
   randinti = (newdat.length-animals.length > 1000);
 
@@ -109,8 +114,6 @@ function updateList(animals, newdat) {
 
 }
 
-var animals = process(rawLazy);
-
 /*
 Four SVG Element
 */
@@ -138,14 +141,13 @@ var svg = d3.select("body").append("svg")
                                     + (height/2) + ")");
 
 
-var slidersvg = d3.select("body").append("svg")
+var thumbBar = d3.select("body").append("svg")
     .attr("width", width)
     .attr("height", 50)
     .style("margin-left","auto")
     .style("margin-right","auto")
-    .style("display","block")        
-    .attr("transform", "translate(" + (width/2)  + "," 
-                                    + (100/2) + ")");
+    .style("margin-top","1cm")        
+    .style("display","block");
 
 /*
 Set Title, and Info Text
@@ -236,22 +238,6 @@ svg.selectAll("axis")
         return '';
       }});
 
-/*
-var vlines = d3.range(-vizwidth,vizwidth,50)
-
-svg.selectAll("text").
-	data(vlines)
-	.enter()
-	.append('line')
-	.attr('x1',function(d) {return d;})
-	.attr('x2',function(d) {return d;})
-	.attr('y1',-150)
-	.attr('y2',150)
-	.attr('stroke-width','0.5')
-	.attr('stroke-dasharray','5,5')	
-	.attr('stroke','#000000');
-*/
-
 mut = 1.2;
 function returnToTimeline(alpha) {
   return function(d) {
@@ -322,10 +308,10 @@ function update_data() {
   titletext.text( function (d) { return "D Wolf"; })
 
   if (current == 0){
-    updateList(animals, freshman);
+    updateList(freshman);
     current = 1;
   } else {
-    updateList(animals, fry);
+    updateList(fry);
     current = 0;
   }
 
@@ -386,49 +372,108 @@ force.on("tick", function(e) {
 });
 
 /**
-Set Slider
+Set Thumbnail Bar. Alignment is a bit arbituary.
 **/
 
-var sliderx = width/4,
-    slidery = 20;
+barWidth = 15
 
-var x = d3.scale.linear()
-    .domain([1, 3])
-    .range([0, vizwidth])
-    .clamp(true);
+var bar = thumbBar.selectAll("g")
+    .data(templateData)
+  .enter().append("g")
+    .attr("transform", 
+      function(d, i) 
+        { 
+        var row = (i%66)
+        var col = Math.floor(i/66)
+        if (col == 0) {
+          return "translate(" + (row*barWidth + 5) + "," 
+                              + col*(barWidth + 2) 
+                              + ")";
+        }
+        if (col == 1) {
+          return "translate(" + ((row+6.5)*barWidth + 5) + "," 
+                              + col*(barWidth + 2) 
+                              + ")"; }       
+        }
+          );
 
-var brush = d3.svg.brush()
-    .x(x)
-    .extent([0, 0])
-    .on("brush", brushed);
+bar.append("rect")
+    .attr("height",  barWidth - 2)
+    .attr("width", barWidth - 2)
+    .on("click", function(d){
+        console.log(d.name)
+      })
+    .on("mouseover", function(){
+        d3.select(this).style("fill", "red");
+      })    
+    .on("mouseout", function(){
+        d3.select(this).style("fill", "black");
+      });
 
-slidersvg.append("g")
-    .attr("class", "axis")
-    .attr("transform", "translate("+sliderx+","+slidery+")")
-    .call(d3.svg.axis()
-      .scale(x)
-      .tickSize(0)
-      .tickPadding(12))
+bar.append("circle")
+    .attr("style", "fill:white")
+    .attr("r",  10)
+    .attr("cx", (barWidth - 2)/2)
+    .attr("cy", (barWidth - 2)/2)
+    .on("click", function(d){
+        console.log(d.name)
+      })    
+    .on("mouseover", function(){
+        d3.select(this).style("fill", "red");
+      })    
+    .on("mouseout", function(){
+        d3.select(this).style("fill", "white");
+      })    
+    .transition()
+      .duration(500)
+      .attr("r",function(d) { return Math.log(d.karma)/2 })    
 
-var slider = slidersvg.append("g")
-    .call(brush);
 
-var handle = slider.append("circle")
-    .attr("r", 5)
-    .attr("fill","black")
-    .attr("transform", "translate("+sliderx+","+slidery+")");;
 
-function brushed() {
+// /**
+// Set Slider
+// **/
+
+// var sliderx = width/4,
+//     slidery = 20;
+
+// var x = d3.scale.linear()
+//     .domain([1, 3])
+//     .range([0, vizwidth])
+//     .clamp(true);
+
+// var brush = d3.svg.brush()
+//     .x(x)
+//     .extent([0, 0])
+//     .on("brush", brushed);
+
+// slidersvg.append("g")
+//     .attr("class", "axis")
+//     .attr("transform", "translate("+sliderx+","+slidery+")")
+//     .call(d3.svg.axis()
+//       .scale(x)
+//       .tickSize(0)
+//       .tickPadding(12))
+
+// var slider = slidersvg.append("g")
+//     .call(brush);
+
+// var handle = slider.append("circle")
+//     .attr("r", 5)
+//     .attr("fill","black")
+//     .attr("transform", "translate("+sliderx+","+slidery+")");;
+
+// function brushed() {
 	
-  var value = x.invert(d3.mouse(this)[0]-sliderx);
-  brush.extent([value, value]);
-  handle.attr("cx", x(value));
+//   var value = x.invert(d3.mouse(this)[0]-sliderx);
+//   brush.extent([value, value]);
+//   handle.attr("cx", x(value));
 
-  for (var i = 0; i < animals.length; i++) {
-  }
+//   for (var i = 0; i < animals.length; i++) {
+//   }
 
-  vforce = value;
-  force.start()
-}
+//   vforce = value;
+//   force.start()
+// }
 
 </script>
