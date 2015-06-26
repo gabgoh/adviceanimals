@@ -25,7 +25,7 @@ text {
 
 </style>
 <body>
-<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
 <script src="lazy_college_senior.js"></script>
 <script src="http://bost.ocks.org/mike/fisheye/fisheye.js?0.0.3"></script>
 
@@ -43,16 +43,21 @@ var width = 1000,
     vizwidth = width/2,
     horizontalBorder = 100;
 
-function sortByKey(array, key) {
-    return array.sort(function(a, b) {
-        var x = a[key]; var y = b[key];
-        return ((x < y) ? -1 : ((x > y) ? 1 : 0));
-    });
-}
+/*
+Script to convert json data (raw data, timestamp, 
+karma, etc) into visualization dependent parameters 
+(size, momentum, x,y position)
+*/
 
 function process(rawAnimals, toSort){
-  // Convert Raw Data (timestamp, karma, etc) 
-  // into visualization dependent parameters
+
+  function sortByKey(array, key) {
+      return array.sort(function(a, b) {
+          var x = a[key]; var y = b[key];
+          return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+      });
+  }
+
   var animals = [];
   for (var key in rawAnimals) {
     t = (rawAnimals[key]["created"]-beginning)/timewidth;
@@ -71,9 +76,12 @@ function process(rawAnimals, toSort){
   return animals;
 }
 
-function updateList(animals, newData) {
+
+fry      = process(rawFry)
+freshman = process(rawFreshman)
+
+function updateList(animals, newdat) {
   
-  newdat = process(newData);
   randinti = (newdat.length-animals.length > 1000);
 
   for (var i = 0; i < newdat.length; i++) {
@@ -101,7 +109,7 @@ function updateList(animals, newData) {
 
 }
 
-var animals = process(rawAnimals);
+var animals = process(rawLazy);
 
 /*
 Four SVG Element
@@ -314,10 +322,10 @@ function update_data() {
   titletext.text( function (d) { return "D Wolf"; })
 
   if (current == 0){
-    updateList(animals, lazy);
+    updateList(animals, freshman);
     current = 1;
   } else {
-    updateList(animals, rawAnimals);
+    updateList(animals, fry);
     current = 0;
   }
 
