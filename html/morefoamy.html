@@ -26,12 +26,9 @@ text {
 </style>
 <body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
-<script src="lazy_college_senior.js"></script>
-<script src="http://bost.ocks.org/mike/fisheye/fisheye.js?0.0.3"></script>
 
-<script src="freshman.js"></script>
-<!--script src="meme_of_the_moment.js"></script-->
-<script src="fry.js"></script>
+<script src="College_Freshman"></script>
+
 <script src="templateinfo.js"></script>
 
 <script>
@@ -60,29 +57,34 @@ function process(rawAnimals, toSort){
   }
 
   var animals = [];
-  for (var key in rawAnimals) {
-    t = (rawAnimals[key]["created"]-beginning)/timewidth;
-    s = 6*Math.max(rawAnimals[key]["score"]/1000,0.02);
+  for (i = 0; i < rawAnimals.length; i++) {
+    animal = rawAnimals[i];
+    t = (animal["cr"]-beginning)/timewidth;
+    s = 6*Math.max(animal["pt"]/1000,0.02);
     xval = t*(width-2*horizontalBorder)
            -vizwidth+horizontalBorder
-    animals.push({"ts":rawAnimals[key]["created"],
+    animals.push({"ts":animal["cr"],
+                  "ti":animal["ti"],
                   "t":xval,
                   "s":Math.pow(s,0.5)*1.6,
                   "x":xval,
                   "y":(Math.random()-0.5)*150,
-                  "id" : key}); 
-    } 
-    sortByKey(animals, "t")
-    animals.reverse()
+                  "id" : animal["id"]}); 
+
+  } 
+  sortByKey(animals, "t")
+  animals.reverse()
   return animals;
 }
 
+animalData = {};
 
-fry      = process(rawFry)
-freshman = process(rawFreshman)
+animalData["3rd World Success Kid"] = process(rawFreshman)
 
+//animalData["3rd World Success Kid"] = process(rawFreshman)
+//animalData["Advice Dog"] = process(rawLazy)
 
-var animals = process(rawLazy);
+var animals = process(rawFreshman);
 
 // variable [animals] is captured from the main scope.
 function updateList(newdat) {
@@ -92,6 +94,8 @@ function updateList(newdat) {
   for (var i = 0; i < newdat.length; i++) {
     if (i < animals.length) {
       animals[i].t  = newdat[i].t;
+      animals[i].ti  = newdat[i].ti;
+      animals[i].ts  = newdat[i].ts;      
       animals[i].s  = newdat[i].s;
       animals[i].id = newdat[i].id;
       if (randinti){
@@ -102,6 +106,7 @@ function updateList(newdat) {
       }       
     } else {
       animals[i] = {"ts":newdat[i].ts,
+                    "ti":newdat[i].ti,
                     "t" :newdat[i].t,
                     "s" :newdat[i].s,
                     "id":newdat[i].id,
@@ -140,15 +145,20 @@ var svg = d3.select("body").append("svg")
     .attr("transform", "translate(" + (width/2)  + "," 
                                     + (height/2) + ")");
 
-
 var thumbBar = d3.select("body").append("svg")
     .attr("width", width)
-    .attr("height", 50)
+    .attr("height", 40)
     .style("margin-left","auto")
     .style("margin-right","auto")
     .style("margin-top","1cm")        
     .style("display","block");
 
+var thumbText = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", 20)
+    .style("margin-left","auto")
+    .style("margin-right","auto")
+    .style("display","block");
 /*
 Set Title, and Info Text
 */
@@ -169,26 +179,10 @@ infotext.attr('x',500)
     .attr("fill","black")
     .attr("text-anchor","middle")
     .text( function (d) { return "Insanity Wolf"; })
-    
-
+  
 /*
 Set Graph
 */
-
-var fisheye = d3.fisheye.circular()
-    .radius(100)
-    .distortion(50);
-
-svg.on("mousemove", function() {
-  /*
-  console.log("hi")
-  fisheye.focus(d3.mouse(this));
-  text.each(function(d) { d.fisheye = fisheye(d); })
-    .attr("cx", function(d) { return d.fisheye.x; })
-    .attr("cy", function(d) { return d.fisheye.y; })
-    //.attr("r", function(d) { return d.fisheye.z ; });
-  */
-});
 
 svg.append('rect')
     .attr('x',-vizwidth).attr('y',-height/2)
@@ -197,23 +191,14 @@ svg.append('rect')
     .attr('stroke','black').attr('stroke-width',2)
     //.attr('stroke-dasharray','8,8') 
 
-svg.append('circle')
-    .attr('cx',500)
-    .attr('cy',0)
-    .attr('r',20)
-    .attr("fill","blue")
-    .on("click", function(d){
-      update_data();
-    });
-
 dates = d3.time.scale()
         .domain([1293858482*1000,(1293858482+92410246)*1000])
         .range([-vizwidth,vizwidth])
         .nice()
-tick = dates.ticks(16);
 
-svg.selectAll("axis")
-  .data(dates.ticks(24))
+axis = svg.selectAll("axis")
+
+axis.data(dates.ticks(24))
   .enter()
   .append('line')
     .attr('x1',dates)
@@ -224,21 +209,24 @@ svg.selectAll("axis")
     .attr('stroke-dasharray','5,5') 
     .attr('stroke','#000000')
 
-svg.selectAll("axis")
-  .data(dates.ticks(8))
+axis.data(dates.ticks(8))
   .enter()
   .append("text")
     .attr("x", dates)
     .attr("y", 165)
     .attr("text-anchor", "middle")
     .text(function(d,i) {
+      console.log(d)
       if (i != 0 && i != 13){
         return dates.tickFormat(10)(d);
       } else {
         return '';
-      }});
+      }
+    });
 
 mut = 1.2;
+tcharge = 200*mut;
+
 function returnToTimeline(alpha) {
   return function(d) {
     var x = d.x - d.t;
@@ -248,10 +236,8 @@ function returnToTimeline(alpha) {
   d.x -= x *= l*1.5*vforce;
   d.y -= y *= l;
   };
+
 }
-
-
-tcharge = 200*mut;
 
 var force = d3.layout.force()
 	.charge(function(d, i) { 
@@ -261,7 +247,7 @@ var force = d3.layout.force()
 	.size([width,0])
 	.gravity(0)
 
-var text = svg.selectAll("text").data(animals);
+var text = svg.selectAll("dotsdata").data(animals);
 
 Array.prototype.clear = function() {
   while (this.length > 0) {
@@ -282,7 +268,7 @@ function update() {
       var date = new Date(d.ts*1000);
       console.log(date)
   		d3.select(this).style("fill", "red");
-      infotext.text( function (dd) { return d.id; })      
+      infotext.text( function (dd) { return d.ti; })      
   		})
   	.on("click", function(d){
   			window.open(
@@ -298,22 +284,13 @@ function update() {
 
   text.exit().remove();
   force.start();
-
 }
 
 var current = 0;
 
-function update_data() {
+function update_data(newAnimals) {
 
-  titletext.text( function (d) { return "D Wolf"; })
-
-  if (current == 0){
-    updateList(freshman);
-    current = 1;
-  } else {
-    updateList(fry);
-    current = 0;
-  }
+  updateList(newAnimals);
 
   text = text.data(force.nodes(), 
     function(d) {return d.id; });
@@ -331,7 +308,7 @@ function update_data() {
     .attr("style","dots")
     .on("mouseover", function(d){
       d3.select(this).style("fill", "red");
-      infotext.text( function (dd) { return d.id; })
+      infotext.text( function (dd) { return d.ti; })
       })
     .on("click", function(d){
         window.open(
@@ -347,7 +324,6 @@ function update_data() {
       .attr("r",function(d, i) { return d.s });
 
   force.start()
-
 }
 
 update()
@@ -370,6 +346,19 @@ force.on("tick", function(e) {
     .attr("cx", function(d) { return d.x; })
     .attr("cy", function(d) { return d.y; });	  
 });
+
+
+/*
+Set Thumbnail Bar Text
+*/
+
+var thumbnailText = thumbText.append('text');
+
+thumbnailText.attr('x',500)
+    .attr('y',10)
+    .attr("fill","black")
+    .attr("text-anchor","middle")
+
 
 /**
 Set Thumbnail Bar. Alignment is a bit arbituary.
@@ -397,33 +386,68 @@ var bar = thumbBar.selectAll("g")
         }
           );
 
-bar.append("rect")
+logme = ""
+
+function changeMeme(d) {
+  // Do Ajax Query
+
+  titletext.text(d.name) 
+  // If cached, no need to do query.
+  if (d.name in animalData){
+    update_data(animalData[d.name])
+    return;
+  }
+
+  // Otherwise do query
+  xhr = new XMLHttpRequest();
+  xhr.onload = function() {
+    logme = xhr.responseText;
+    rawData = JSON.parse(logme)
+    animalData[d.name] = process(rawData)
+    update_data(animalData[d.name])
+  };
+  console.log(d.filename)
+  xhr.open("GET",d.filename); //assuming kgr.bss is plaintext
+  xhr.send();
+  // Otherwise, do query
+
+}
+
+function mouseOverThumb(d) {
+  thumbnailText.text(d.name)
+  // get rectangle, even if mouse is over circle  
+  rect = this.parentNode.childNodes[0] 
+  d3.select(rect).style("fill", "red")
+}
+
+function mouseOutThumb(d) {
+  thumbnailText.text("")
+  rect = this.parentNode.childNodes[0] 
+  circ = this.parentNode.childNodes[1]
+
+  d3.select(rect).style("fill", "black")
+  d3.select(circ).style("fill", "white")
+
+}
+
+square = bar.append("g")
+
+square.append("rect")
     .attr("height",  barWidth - 2)
     .attr("width", barWidth - 2)
-    .on("click", function(d){
-        console.log(d.name)
-      })
-    .on("mouseover", function(){
-        d3.select(this).style("fill", "red");
-      })    
-    .on("mouseout", function(){
-        d3.select(this).style("fill", "black");
-      });
+    .attr("id", "square")    
+    .on("click", changeMeme)
+    .on("mouseover", mouseOverThumb)    
+    .on("mouseout", mouseOutThumb);
 
-bar.append("circle")
+square.append("circle")
     .attr("style", "fill:white")
     .attr("r",  10)
     .attr("cx", (barWidth - 2)/2)
     .attr("cy", (barWidth - 2)/2)
-    .on("click", function(d){
-        console.log(d.name)
-      })    
-    .on("mouseover", function(){
-        d3.select(this).style("fill", "red");
-      })    
-    .on("mouseout", function(){
-        d3.select(this).style("fill", "white");
-      })    
+    .on("click", changeMeme)    
+    .on("mouseover", mouseOverThumb)    
+    .on("mouseout", mouseOutThumb)    
     .transition()
       .duration(500)
       .attr("r",function(d) { return Math.log(d.karma)/2 })    

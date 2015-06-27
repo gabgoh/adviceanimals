@@ -3,6 +3,10 @@ from skimage import data, transform
 
 thumbdir = 'D:\\memeproject\\thumbnails\\'
 
+"""
+precompute and sort thumbnails
+"""
+
 def compareAll(imageFileName, thumbs):
     im = data.load(imageFileName)
     template_summary = summary(uint8(transform.resize(im, [70,70,3])*255))
@@ -30,7 +34,6 @@ fp = open('D:\\memeproject\\ThumbsnailSummaryTitles','r')
 thumbs = pickle.load(fp)
 fp.close()
 print "Thumbnail Summaries Loaded"
-
 
 for name in os.listdir(r'D:\\memeproject\\templates\\'):
     imageFileName = 'D:\\memeproject\\templates\\' + name
