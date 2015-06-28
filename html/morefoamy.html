@@ -25,12 +25,8 @@ text {
 
 </style>
 <body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
-
-<script src="College_Freshman"></script>
-
+<script src="d3.min.js"></script>
 <script src="templateinfo.js"></script>
-
 <script>
 
 var width = 1000,
@@ -250,37 +246,6 @@ Array.prototype.clear = function() {
   }
 };
 
-function update() {
-
-  // Only apply to objects which were just inserted 
-  text.enter().append("circle");
-  
-  text
-  	.attr("r",function(d, i) { return 0 })
-  	.attr("style","dots")
-  	//.call(force.drag)
-  	.on("mouseover", function(d){
-      var date = new Date(d.ts*1000);
-      console.log(date)
-  		d3.select(this).style("fill", "red");
-      infotext.text( function (dd) { return d.ti; })      
-  		})
-  	.on("click", function(d){
-  			window.open(
-          "http://www.reddit.com/r/AdviceAnimals/" 
-          + d.id,'_blank');
-  		})
-    .on("mouseout", function(){
-        d3.select(this).style("fill", "black");
-      })
-    .transition()
-      .duration(function(d,i) {return 0.5*(animals.length -i)} )
-      .attr("r",function(d,i) { return d.s });
-
-  text.exit().remove();
-  force.start();
-}
-
 var current = 0;
 
 function update_data(newAnimals) {
@@ -321,8 +286,8 @@ function update_data(newAnimals) {
   force.start()
 }
 
-update()
 force.start();
+
 vforce = 2.5
 
 force.on("tick", function(e) {
@@ -360,8 +325,8 @@ thumbnailText.attr('x',500)
 Set Thumbnail Bar. Alignment is a bit arbituary.
 **/
 
-// Some template globals
-barWidth = 14
+// Some template globals for proper centering of thumbs.
+barWidth = 15
 numCols  = 40
 
 numTemplates = templateData.length
@@ -392,6 +357,10 @@ var bar = thumbBar.selectAll("g")
 
 logme = ""
 
+/* Functions to be called back from buttons*/
+
+// When a button is clicked, load the meme data and swap out the current
+// data for the new meme.
 function changeMeme(d) {
   // Do Ajax Query
 
@@ -411,7 +380,7 @@ function changeMeme(d) {
     update_data(animalData[d.name])
   };
   console.log(d.filename)
-  xhr.open("GET","memes/" + d.filename); //assuming kgr.bss is plaintext
+  xhr.open("GET","/memes/" + d.filename); //assuming kgr.bss is plaintext
   xhr.send();
   // Otherwise, do query
 
@@ -454,7 +423,7 @@ square.append("circle")
     .on("mouseout", mouseOutThumb)    
     .transition()
       .duration(500)
-      .attr("r",function(d) { return Math.log(d.karma)/2 })    
+      .attr("r",function(d) { return Math.pow(d.karma, 0.6)/1200 })    
 
 
 

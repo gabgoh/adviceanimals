@@ -36,6 +36,7 @@ fp.close()
 print "Thumbnail Summaries Loaded"
 
 for name in os.listdir(r'D:\\memeproject\\templates\\'):
+
     imageFileName = 'D:\\memeproject\\templates\\' + name
     (s,cutoff) = compareAll(imageFileName, thumbs)
 

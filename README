@@ -2,23 +2,29 @@ Processing Pipeline
 
 1) First parse the raw reddit data from Jason, and scrape thumbnails into thumbs folder (scrapeThumbs.py)
 
+    INPUT          : data\adviceAnimalsSubmissions
+    OUTPUT         : Thumbnails
+
 2) Precompute Thumbail summaries (createSummaries.py)
     This should achieve a compression of the thumbnails into a smalelr 70mb file.
-    The python file also provides a means of appending metadata from the raw reddit data into the summaries.
+    The python file also provides a means of appending metadata from the raw reddit data into the summaries,
+    such as title, date created, and number of upvotes.
 
-    INPUT          : Thumbnails, \data\adviceAnimalsSubmissions
-    FILE GENERATED : \memeproject\ThumbsnailSummaryTitles
+    INPUT          : Thumbnails, data\adviceAnimalsSubmissions
+    FILE GENERATED : \ThumbsnailSummaryTitles
 
 3) Precompute Template Summaries (processTemplates.py)
+    Precompute summaries for templates.
 
     INPUT          : Template Pictures
-    OUTPUT         : \memeproject\\templateData
+    OUTPUT         : \templateData
 
 4) Sort Thumbnails according to distance between template and Summary (sortThumbs.py).
-    Put the sorted thumbnails in
+    Precompute dist(template, thumbnail). Store the distances, sorted (from smallest to biggest),
+     in a file. (This is done to make the next step smoother)
 
     INPUT          : \memeproject\templateData, \memeproject\ThumbsnailSummaryTitles
-    OUTPUT         : \memeproject\thumbssort\*
+    OUTPUT         : thumbssort\*
     (note that the output file will have an identical name to the template file, including the extension)
 
 5) Manually pick cutoff, and stragglers using python gui. Create JSON Files (thumbSortToJSON.py)
@@ -26,7 +32,7 @@ Processing Pipeline
     INPUT         : \memeproject\thumbssort\*
     OUTPUT        : \code\html\*.js
 
-6) Create JSON File of templates for the thumbBar (processTemplates.py)
+6) Create JSON File of templates for the thumbBar (templatesToJSON.py)
 
-    INPUT         : \code\html\*.js (TODO)
+    INPUT         : \code\html\*.js
     OUTPUT        : \code\html\templateData.js
