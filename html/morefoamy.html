@@ -61,7 +61,7 @@ function process(rawAnimals, toSort){
     animal = rawAnimals[i];
     t = (animal["cr"]-beginning)/timewidth;
     s = 6*Math.max(animal["pt"]/1000,0.02);
-    xval = t*(width-2*horizontalBorder)
+    xval = t*(vizwidth*2-2*horizontalBorder)
            -vizwidth+horizontalBorder
     animals.push({"ts":animal["cr"],
                   "ti":animal["ti"],
@@ -79,12 +79,10 @@ function process(rawAnimals, toSort){
 
 animalData = {};
 
-animalData["3rd World Success Kid"] = process(rawFreshman)
-
 //animalData["3rd World Success Kid"] = process(rawFreshman)
 //animalData["Advice Dog"] = process(rawLazy)
 
-var animals = process(rawFreshman);
+var animals = [];
 
 // variable [animals] is captured from the main scope.
 function updateList(newdat) {
@@ -130,8 +128,6 @@ var title = d3.select("body").append("svg")
     .style("margin-right","auto")
     .style("margin-top","0.1cm")    
     .style("display","block") 
-    .attr("transform", "translate(" + (width/2)  + "," 
-                                    + (50) + ")");
 
 
 var svg = d3.select("body").append("svg")
@@ -154,8 +150,7 @@ var thumbBar = d3.select("body").append("svg")
     .style("display","block");
 
 var thumbText = d3.select("body").append("svg")
-    .attr("width", width)
-    .attr("height", 20)
+    .attr("width", width) // Height to be set later
     .style("margin-left","auto")
     .style("margin-right","auto")
     .style("display","block");
@@ -344,7 +339,8 @@ force.on("tick", function(e) {
 	text
 	  .each(returnToTimeline(e.alpha))
     .attr("cx", function(d) { return d.x; })
-    .attr("cy", function(d) { return d.y; });	  
+    .attr("cy", function(d) { return d.y; });
+
 });
 
 
@@ -364,27 +360,35 @@ thumbnailText.attr('x',500)
 Set Thumbnail Bar. Alignment is a bit arbituary.
 **/
 
-barWidth = 15
+// Some template globals
+barWidth = 14
+numCols  = 40
+
+numTemplates = templateData.length
+numRows      = Math.floor(numTemplates/numCols)
+numLastCol   = numTemplates%numCols
+marginLast   = (numCols - numLastCol)/2   
+leftMargin   = (width - (numCols*barWidth))/2
+
+thumbBar.attr("height", (numRows+3)*barWidth)
 
 var bar = thumbBar.selectAll("g")
     .data(templateData)
   .enter().append("g")
     .attr("transform", 
-      function(d, i) 
-        { 
-        var row = (i%66)
-        var col = Math.floor(i/66)
-        if (col == 0) {
-          return "translate(" + (row*barWidth + 5) + "," 
+      function(d, i) {
+        var row = (i%numCols)
+        var col = Math.floor(i/numCols)
+        if (col != numRows) {
+          return "translate(" + (row*barWidth + leftMargin) + "," 
                               + col*(barWidth + 2) 
                               + ")";
         }
-        if (col == 1) {
-          return "translate(" + ((row+6.5)*barWidth + 5) + "," 
+        else {
+          return "translate(" + ((row + marginLast)*barWidth + leftMargin) + "," 
                               + col*(barWidth + 2) 
                               + ")"; }       
-        }
-          );
+      });
 
 logme = ""
 
@@ -407,7 +411,7 @@ function changeMeme(d) {
     update_data(animalData[d.name])
   };
   console.log(d.filename)
-  xhr.open("GET",d.filename); //assuming kgr.bss is plaintext
+  xhr.open("GET","memes/" + d.filename); //assuming kgr.bss is plaintext
   xhr.send();
   // Otherwise, do query
 

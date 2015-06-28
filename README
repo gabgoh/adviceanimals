@@ -1,0 +1,32 @@
+Processing Pipeline
+
+1) First parse the raw reddit data from Jason, and scrape thumbnails into thumbs folder (scrapeThumbs.py)
+
+2) Precompute Thumbail summaries (createSummaries.py)
+    This should achieve a compression of the thumbnails into a smalelr 70mb file.
+    The python file also provides a means of appending metadata from the raw reddit data into the summaries.
+
+    INPUT          : Thumbnails, \data\adviceAnimalsSubmissions
+    FILE GENERATED : \memeproject\ThumbsnailSummaryTitles
+
+3) Precompute Template Summaries (processTemplates.py)
+
+    INPUT          : Template Pictures
+    OUTPUT         : \memeproject\\templateData
+
+4) Sort Thumbnails according to distance between template and Summary (sortThumbs.py).
+    Put the sorted thumbnails in
+
+    INPUT          : \memeproject\templateData, \memeproject\ThumbsnailSummaryTitles
+    OUTPUT         : \memeproject\thumbssort\*
+    (note that the output file will have an identical name to the template file, including the extension)
+
+5) Manually pick cutoff, and stragglers using python gui. Create JSON Files (thumbSortToJSON.py)
+
+    INPUT         : \memeproject\thumbssort\*
+    OUTPUT        : \code\html\*.js
+
+6) Create JSON File of templates for the thumbBar (processTemplates.py)
+
+    INPUT         : \code\html\*.js (TODO)
+    OUTPUT        : \code\html\templateData.js
