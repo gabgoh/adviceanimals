@@ -29,17 +29,18 @@ def compareAll(imageFileName, thumbs):
     cutoff = cutoff + 100
     return s, cutoff
 
+if __name__ == "__main__":
 
-fp = open('D:\\memeproject\\ThumbsnailSummaryTitles','r')
-thumbs = pickle.load(fp)
-fp.close()
-print "Thumbnail Summaries Loaded"
-
-for name in os.listdir(r'D:\\memeproject\\templates\\'):
-
-    imageFileName = 'D:\\memeproject\\templates\\' + name
-    (s,cutoff) = compareAll(imageFileName, thumbs)
-
-    fp = open('D:\\memeproject\\thumbssort\\' + name, 'w')
-    pickle.dump((s, cutoff), fp)
+    fp = open('D:\\memeproject\\ThumbsnailSummaryTitles','r')
+    thumbs = pickle.load(fp)
     fp.close()
+    print "Thumbnail Summaries Loaded"
+
+    for name in os.listdir(r'D:\\memeproject\\templates\\'):
+
+        imageFileName = 'D:\\memeproject\\templates\\' + name
+        (s,cutoff) = compareAll(imageFileName, thumbs)
+
+        fp = open('D:\\memeproject\\thumbssort\\' + name, 'w')
+        pickle.dump((s, cutoff), fp)
+        fp.close()

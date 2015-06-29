@@ -5,6 +5,11 @@ text {
   font: bold 12px monospace;
 }
 
+.redtext {
+  font  : bold 12px monospace;
+  fill : red
+}
+
 .enter {
   fill: black;
 }
@@ -21,21 +26,34 @@ text {
 
 .title {
   font: bold 20px monospace;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
+
 
 </style>
 <body>
 <script src="d3.min.js"></script>
-<script src="templateinfo.js"></script>
+<script src="templateInfo.js"></script>
 <script>
 
-var width = 1000,
-    height = 300,
-    charge_multiplier = 1,
-    beginning = 1293858482,
-    timewidth = 92410246,
-    vizwidth = width/2,
-    horizontalBorder = 100;
+/* 
+Global Variables 
+*/
+
+width = 1000,
+height = 300,
+charge_multiplier = 1,
+beginning = 1293858482,
+timewidth = 92410246,
+vizwidth = width/2,
+hBorder = 200;
+
+dates = d3.time.scale()
+        .domain([1293858482*1000,(1293858482+97410246)*1000])
+        .range([-vizwidth,vizwidth])
+        .nice()
 
 /*
 Script to convert json data (raw data, timestamp, 
@@ -55,10 +73,9 @@ function process(rawAnimals, toSort){
   var animals = [];
   for (i = 0; i < rawAnimals.length; i++) {
     animal = rawAnimals[i];
-    t = (animal["cr"]-beginning)/timewidth;
+    t = (animal["cr"]-beginning)/timewidth
     s = 6*Math.max(animal["pt"]/1000,0.02);
-    xval = t*(vizwidth*2-2*horizontalBorder)
-           -vizwidth+horizontalBorder
+    xval = dates(animal["cr"]*1000)
     animals.push({"ts":animal["cr"],
                   "ti":animal["ti"],
                   "t":xval,
@@ -71,6 +88,7 @@ function process(rawAnimals, toSort){
   sortByKey(animals, "t")
   animals.reverse()
   return animals;
+
 }
 
 animalData = {};
@@ -114,66 +132,47 @@ function updateList(newdat) {
 }
 
 /*
-Four SVG Element
+Start SVGs Element
 */
 
 var title = d3.select("body").append("svg")
-    .attr("width", width)
+    .attr("width", width + hBorder)
     .attr("height", 100)
-    .style("margin-left","auto")
-    .style("margin-right","auto")
-    .style("margin-top","0.1cm")    
-    .style("display","block") 
-
+    .attr("style", "position:absolute; margin:auto; top: -450; left: 0; bottom: 0; right: 0;")
 
 var svg = d3.select("body").append("svg")
-    .attr("width", width)
-    .attr("height", height+20)
-    .style("margin-left","auto")
-    .style("margin-right","auto")
-    .style("margin-top","0.5cm")    
-    .style("display","block")    
+    .attr("width", width + hBorder)
+    .attr("height", height + 60)
+    .attr("style", "position:absolute; margin:auto; top: 0; left: 0; bottom: 0; right: 0;")
     .append("g")
-    .attr("transform", "translate(" + (width/2)  + "," 
-                                    + (height/2) + ")");
+    .attr("transform", "translate(" + (width/2 + hBorder/2)  + "," 
+                                    + (height/2 + 30) +  ")");
 
 var thumbBar = d3.select("body").append("svg")
-    .attr("width", width)
+    .attr("width", width + hBorder)
     .attr("height", 40)
-    .style("margin-left","auto")
-    .style("margin-right","auto")
-    .style("margin-top","1cm")        
-    .style("display","block");
+    .attr("style", "position:absolute; margin:auto; top: 450; left: 0; bottom: 0; right: 0;")
 
-var thumbText = d3.select("body").append("svg")
-    .attr("width", width) // Height to be set later
-    .style("margin-left","auto")
-    .style("margin-right","auto")
-    .style("display","block");
+
 /*
 Set Title, and Info Text
 */
 
 var titletext = title.append('text');
 
-titletext.attr('x',500)
+titletext.attr('x',(width + hBorder)/2)
     .attr('y',55)
     .attr("fill","black")
     .attr("text-anchor","middle")
     .attr("class", "title")
-    .text( function (d) { return "Insanity Wolf"; })
+    .text( function (d) { return "Pick an Advice Animal to Begin"; })
 
-var infotext = title.append('text');
-
-infotext.attr('x',500)
-    .attr('y',85)
-    .attr("fill","black")
-    .attr("text-anchor","middle")
-    .text( function (d) { return "Insanity Wolf"; })
   
 /*
 Set Graph
 */
+
+// Axis
 
 svg.append('rect')
     .attr('x',-vizwidth).attr('y',-height/2)
@@ -182,14 +181,9 @@ svg.append('rect')
     .attr('stroke','black').attr('stroke-width',2)
     //.attr('stroke-dasharray','8,8') 
 
-dates = d3.time.scale()
-        .domain([1293858482*1000,(1293858482+92410246)*1000])
-        .range([-vizwidth,vizwidth])
-        .nice()
-
 axis = svg.selectAll("axis")
 
-axis.data(dates.ticks(24))
+axis.data(dates.ticks(25))
   .enter()
   .append('line')
     .attr('x1',dates)
@@ -200,7 +194,7 @@ axis.data(dates.ticks(24))
     .attr('stroke-dasharray','5,5') 
     .attr('stroke','#000000')
 
-axis.data(dates.ticks(8))
+axis.data(dates.ticks(12))
   .enter()
   .append("text")
     .attr("x", dates)
@@ -214,6 +208,48 @@ axis.data(dates.ticks(8))
         return '';
       }
     });
+
+// Red line representing current meme time
+
+currentTime = svg.selectAll("currentTime")
+
+currentTimeData = currentTime.data([0])
+
+currentTimeDataGroup = currentTimeData.enter().append('g')
+
+currentTimeDataGroup.attr("transform", function(d) {return "translate(0,0)"} )
+
+currentTimeDataGroup.append("line")
+    .attr('x1',0)
+    .attr('x2',0)
+    .attr('y1',-150)
+    .attr('y2',150)
+    .attr('stroke-width','1.5')
+    .attr('stroke','#FF0000')
+    .append("text")
+
+currentTimeDataGroup.append("text")
+    .attr('x',0)
+    .attr('y',-150)
+    .text("▼")
+    .attr("text-anchor","middle")
+    .attr("class", "redtext")
+
+currentTimeText = currentTimeDataGroup.append("text")
+    .attr('x',0)
+    .attr('y',-160)
+    .text("Jan 1st 2014, 12:24pm")
+    .attr("text-anchor","middle")
+    .attr("class", "redtext")
+
+currentTitleText = currentTimeDataGroup.append("text")
+    .attr('x',0)
+    .attr('y',-172)
+    .text("Every once in awhile, we need a Courage Wolf")
+    .attr("text-anchor","middle")
+    .attr("class", "redtext")
+
+// Physics stuff
 
 mut = 1.2;
 tcharge = 200*mut;
@@ -244,6 +280,7 @@ Array.prototype.clear = function() {
   while (this.length > 0) {
     this.pop();
   }
+
 };
 
 var current = 0;
@@ -252,8 +289,7 @@ function update_data(newAnimals) {
 
   updateList(newAnimals);
 
-  text = text.data(force.nodes(), 
-    function(d) {return d.id; });
+  text = text.data(force.nodes());
 
   text.exit()
     .transition()
@@ -266,10 +302,18 @@ function update_data(newAnimals) {
   // Apply to all objects
   text
     .attr("style","dots")
-    .on("mouseover", function(d){
-      d3.select(this).style("fill", "red");
-      infotext.text( function (dd) { return d.ti; })
-      })
+    .on("mouseover", function(d)
+    {
+      d3.select(this).style("fill", "red")
+
+      currentTimeNewData = currentTimeData.data([d.ts*1000])
+
+      currentTimeNewData.attr("transform", 
+        function(d) {return "translate(" + dates(d) + ",0)"} )
+
+      currentTitleText.text( function (dd) { return d.ti; } )
+      currentTimeText.text( function (dd) { return new Date(d.ts*1000) })
+    })
     .on("click", function(d){
         window.open(
           "http://www.reddit.com/r/AdviceAnimals/" 
@@ -284,6 +328,7 @@ function update_data(newAnimals) {
       .attr("r",function(d, i) { return d.s });
 
   force.start()
+
 }
 
 force.start();
@@ -309,31 +354,30 @@ force.on("tick", function(e) {
 });
 
 
-/*
-Set Thumbnail Bar Text
-*/
-
-var thumbnailText = thumbText.append('text');
-
-thumbnailText.attr('x',500)
-    .attr('y',10)
-    .attr("fill","black")
-    .attr("text-anchor","middle")
-
-
 /**
 Set Thumbnail Bar. Alignment is a bit arbituary.
 **/
 
 // Some template globals for proper centering of thumbs.
 barWidth = 15
-numCols  = 40
+numCols  = 80
 
 numTemplates = templateData.length
 numRows      = Math.floor(numTemplates/numCols)
 numLastCol   = numTemplates%numCols
 marginLast   = (numCols - numLastCol)/2   
-leftMargin   = (width - (numCols*barWidth))/2
+leftMargin   = ((width + hBorder) - (numCols*barWidth))/2
+
+function xyFromIndex(i) {
+  var row = (i%numCols)
+  var col = Math.floor(i/numCols)
+  if (col != numRows) { 
+    return [(row*barWidth + leftMargin), col*(barWidth + 2)]
+  }
+  else { 
+    return [(row + marginLast)*barWidth + leftMargin,col*(barWidth + 2)]
+  }
+}
 
 thumbBar.attr("height", (numRows+3)*barWidth)
 
@@ -342,25 +386,23 @@ var bar = thumbBar.selectAll("g")
   .enter().append("g")
     .attr("transform", 
       function(d, i) {
-        var row = (i%numCols)
-        var col = Math.floor(i/numCols)
-        if (col != numRows) {
-          return "translate(" + (row*barWidth + leftMargin) + "," 
-                              + col*(barWidth + 2) 
-                              + ")";
-        }
-        else {
-          return "translate(" + ((row + marginLast)*barWidth + leftMargin) + "," 
-                              + col*(barWidth + 2) 
-                              + ")"; }       
+        xy = xyFromIndex(i)
+        return "translate(" + xy[0] + "," + xy[1] + ")";
       });
-
-logme = ""
 
 /* Functions to be called back from buttons*/
 
+
+lineTitle = thumbBar.append("text")
+
+lineTitle.attr("x", 10)
+    .attr("y", 60)
+    .attr("text-anchor", "middle")
+
+
 // When a button is clicked, load the meme data and swap out the current
 // data for the new meme.
+
 function changeMeme(d) {
   // Do Ajax Query
 
@@ -380,27 +422,34 @@ function changeMeme(d) {
     update_data(animalData[d.name])
   };
   console.log(d.filename)
-  xhr.open("GET","/memes/" + d.filename); //assuming kgr.bss is plaintext
+  xhr.open("GET","memes/" + d.filename); //assuming kgr.bss is plaintext
   xhr.send();
   // Otherwise, do query
 
 }
 
-function mouseOverThumb(d) {
-  thumbnailText.text(d.name)
+function mouseOverThumb(d,i) {
   // get rectangle, even if mouse is over circle  
   rect = this.parentNode.childNodes[0] 
   d3.select(rect).style("fill", "red")
+
+  lineTitle.attr("x", 
+      function(d) {
+        return xyFromIndex(i)[0] + barWidth/2
+      }).
+      attr("y", 50);
+
+  lineTitle.text(d.name)
+
 }
 
 function mouseOutThumb(d) {
-  thumbnailText.text("")
   rect = this.parentNode.childNodes[0] 
   circ = this.parentNode.childNodes[1]
 
   d3.select(rect).style("fill", "black")
   d3.select(circ).style("fill", "white")
-
+  lineTitle.text("")
 }
 
 square = bar.append("g")
@@ -423,54 +472,8 @@ square.append("circle")
     .on("mouseout", mouseOutThumb)    
     .transition()
       .duration(500)
-      .attr("r",function(d) { return Math.pow(d.karma, 0.6)/1200 })    
+      .attr("r",function(d) { return Math.pow(d.karma, 0.6)/1600 })    
 
 
-
-// /**
-// Set Slider
-// **/
-
-// var sliderx = width/4,
-//     slidery = 20;
-
-// var x = d3.scale.linear()
-//     .domain([1, 3])
-//     .range([0, vizwidth])
-//     .clamp(true);
-
-// var brush = d3.svg.brush()
-//     .x(x)
-//     .extent([0, 0])
-//     .on("brush", brushed);
-
-// slidersvg.append("g")
-//     .attr("class", "axis")
-//     .attr("transform", "translate("+sliderx+","+slidery+")")
-//     .call(d3.svg.axis()
-//       .scale(x)
-//       .tickSize(0)
-//       .tickPadding(12))
-
-// var slider = slidersvg.append("g")
-//     .call(brush);
-
-// var handle = slider.append("circle")
-//     .attr("r", 5)
-//     .attr("fill","black")
-//     .attr("transform", "translate("+sliderx+","+slidery+")");;
-
-// function brushed() {
-	
-//   var value = x.invert(d3.mouse(this)[0]-sliderx);
-//   brush.extent([value, value]);
-//   handle.attr("cx", x(value));
-
-//   for (var i = 0; i < animals.length; i++) {
-//   }
-
-//   vforce = value;
-//   force.start()
-// }
 
 </script>
