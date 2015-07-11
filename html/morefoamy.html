@@ -45,13 +45,13 @@ Global Variables
 width = 1000,
 height = 300,
 charge_multiplier = 1,
-beginning = 1293858482,
-timewidth = 92410246,
+beginning = 1291680000
+timewidth = 92410246 + 92410246/3
 vizwidth = width/2,
 hBorder = 200;
 
 dates = d3.time.scale()
-        .domain([1293858482*1000,(1293858482+97410246)*1000])
+        .domain([beginning*1000,(beginning+timewidth)*1000])
         .range([-vizwidth,vizwidth])
         .nice()
 
@@ -81,7 +81,7 @@ function process(rawAnimals, toSort){
                   "t":xval,
                   "s":Math.pow(s,0.5)*1.6,
                   "x":xval,
-                  "y":(Math.random()-0.5)*150,
+                  "y":(Math.random()-0.5)*(height/2),
                   "id" : animal["id"]}); 
 
   } 
@@ -99,36 +99,44 @@ animalData = {};
 var animals = [];
 
 // variable [animals] is captured from the main scope.
-function updateList(newdat) {
+function updateList(newdat, sampleRate) {
   
+  // newdat is the data in ts,ti ... x,y format. It will be copied into the current scope
+  // sampleRate is the proportion of memes which will be kept (randomly chosen)
+
   randinti = (newdat.length-animals.length > 1000);
+  var j = 0 // j is the effective length, if sampling is included
 
   for (var i = 0; i < newdat.length; i++) {
-    if (i < animals.length) {
-      animals[i].t  = newdat[i].t;
-      animals[i].ti  = newdat[i].ti;
-      animals[i].ts  = newdat[i].ts;      
-      animals[i].s  = newdat[i].s;
-      animals[i].id = newdat[i].id;
-      if (randinti){
-        animals[i].x  = newdat[i].t,
-        animals[i].y  - (Math.random()-0.5)*150   
-        animals[i].px  = newdat[i].t,
-        animals[i].py  - (Math.random()-0.5)*150 
-      }       
-    } else {
-      animals[i] = {"ts":newdat[i].ts,
-                    "ti":newdat[i].ti,
-                    "t" :newdat[i].t,
-                    "s" :newdat[i].s,
-                    "id":newdat[i].id,
-                    "x" :newdat[i].t,
-                    "y" :(Math.random()-0.5)*150}
+
+    if (Math.random() < sampleRate) {
+
+      if (i < animals.length) {
+        animals[j].t  = newdat[i].t;
+        animals[j].ti  = newdat[i].ti;
+        animals[j].ts  = newdat[i].ts;      
+        animals[j].s  = newdat[i].s;
+        animals[j].id = newdat[i].id;
+        if (randinti){
+          animals[j].x  = newdat[i].t
+          //animals[j].y  = (Math.random()-0.5)*10   
+          animals[j].px  = newdat[i].t
+          //animals[j].py  = (Math.random()-0.5)*10 
+        }       
+      } else {
+        animals[j] = {"ts":newdat[i].ts,
+                      "ti":newdat[i].ti,
+                      "t" :newdat[i].t,
+                      "s" :newdat[i].s,
+                      "id":newdat[i].id,
+                      "x" :newdat[i].t,
+                      "y" :(Math.random()-0.5)*(height/2)}
+      }
+
+      j = j + 1;
     }
   }
-  
-  animals.splice(i,animals.length)    
-
+  animals.splice(j,animals.length)    
 }
 
 /*
@@ -138,7 +146,7 @@ Start SVGs Element
 var title = d3.select("body").append("svg")
     .attr("width", width + hBorder)
     .attr("height", 100)
-    .attr("style", "position:absolute; margin:auto; top: -450; left: 0; bottom: 0; right: 0;")
+    .attr("style", "position:absolute; margin:auto; top: -450px; left: 0; bottom: 0; right: 0;")
 
 var svg = d3.select("body").append("svg")
     .attr("width", width + hBorder)
@@ -151,7 +159,7 @@ var svg = d3.select("body").append("svg")
 var thumbBar = d3.select("body").append("svg")
     .attr("width", width + hBorder)
     .attr("height", 40)
-    .attr("style", "position:absolute; margin:auto; top: 450; left: 0; bottom: 0; right: 0;")
+    .attr("style", "position:absolute; margin:auto; top: 450px; left: 0; bottom: 0; right: 0;")
 
 
 /*
@@ -188,8 +196,8 @@ axis.data(dates.ticks(25))
   .append('line')
     .attr('x1',dates)
     .attr('x2',dates)
-    .attr('y1',-150)
-    .attr('y2',150)
+    .attr('y1',-(height/2))
+    .attr('y2',height/2)
     .attr('stroke-width','0.5')
     .attr('stroke-dasharray','5,5') 
     .attr('stroke','#000000')
@@ -198,16 +206,50 @@ axis.data(dates.ticks(12))
   .enter()
   .append("text")
     .attr("x", dates)
-    .attr("y", 165)
+    .attr("y", height/2 + 15)
     .attr("text-anchor", "middle")
     .text(function(d,i) {
-      console.log(d)
       if (i != 0 && i != 13){
         return dates.tickFormat(10)(d);
       } else {
         return '';
       }
     });
+
+samplingRateText = svg.append("text").attr("x",510).attr("y",-135).attr("class","title").text("1x")
+svg.append("text").attr("x",510).attr("y",-120).text("Sampling")
+
+vAxisTop = svg.append('line')
+    .attr('x1',-500)
+    .attr('x2',500)
+    .attr('y1',height/8)
+    .attr('y2',height/8)
+    .attr('stroke-width','1')
+    .attr('stroke','#000000')
+
+vAxisBottom = svg.append('line')
+    .attr('x1',-500)
+    .attr('x2',500)
+    .attr('y1',-height/8)
+    .attr('y2',-height/8)
+    .attr('stroke-width','1')
+    .attr('stroke','#000000')
+
+svg.append('line')
+    .attr('x1',-501)
+    .attr('x2',501)
+    .attr('y1',height/2)
+    .attr('y2',height/2)
+    .attr('stroke-width','4')
+    .attr('stroke','#000000')
+
+svg.append('line')
+    .attr('x1',-501)
+    .attr('x2',501)
+    .attr('y1',-height/2)
+    .attr('y2',-height/2)
+    .attr('stroke-width','4')
+    .attr('stroke','#000000')    
 
 // Red line representing current meme time
 
@@ -222,30 +264,29 @@ currentTimeDataGroup.attr("transform", function(d) {return "translate(0,0)"} )
 currentTimeDataGroup.append("line")
     .attr('x1',0)
     .attr('x2',0)
-    .attr('y1',-150)
-    .attr('y2',150)
+    .attr('y1',-height/2)
+    .attr('y2',height/2)
     .attr('stroke-width','1.5')
     .attr('stroke','#FF0000')
     .append("text")
 
 currentTimeDataGroup.append("text")
     .attr('x',0)
-    .attr('y',-150)
+    .attr('y',-height/2)
     .text("▼")
     .attr("text-anchor","middle")
     .attr("class", "redtext")
 
 currentTimeText = currentTimeDataGroup.append("text")
     .attr('x',0)
-    .attr('y',-160)
-    .text("Jan 1st 2014, 12:24pm")
+    .attr('y',-height/2 - 10)
+    .text("Hover over meme to see title. Click to open the reddit page.")
     .attr("text-anchor","middle")
     .attr("class", "redtext")
 
 currentTitleText = currentTimeDataGroup.append("text")
     .attr('x',0)
-    .attr('y',-172)
-    .text("Every once in awhile, we need a Courage Wolf")
+    .attr('y',-height/2 - 22)
     .attr("text-anchor","middle")
     .attr("class", "redtext")
 
@@ -285,9 +326,9 @@ Array.prototype.clear = function() {
 
 var current = 0;
 
-function update_data(newAnimals) {
+function update_data(newAnimals, sampleRate) {
 
-  updateList(newAnimals);
+  updateList(newAnimals, sampleRate);
 
   text = text.data(force.nodes());
 
@@ -360,13 +401,14 @@ Set Thumbnail Bar. Alignment is a bit arbituary.
 
 // Some template globals for proper centering of thumbs.
 barWidth = 15
-numCols  = 80
+numCols  = 50
 
 numTemplates = templateData.length
 numRows      = Math.floor(numTemplates/numCols)
 numLastCol   = numTemplates%numCols
 marginLast   = (numCols - numLastCol)/2   
 leftMargin   = ((width + hBorder) - (numCols*barWidth))/2
+topMargin    = 120
 
 function xyFromIndex(i) {
   var row = (i%numCols)
@@ -379,7 +421,7 @@ function xyFromIndex(i) {
   }
 }
 
-thumbBar.attr("height", (numRows+3)*barWidth)
+thumbBar.attr("height", (numRows)*barWidth + topMargin)
 
 var bar = thumbBar.selectAll("g")
     .data(templateData)
@@ -387,7 +429,7 @@ var bar = thumbBar.selectAll("g")
     .attr("transform", 
       function(d, i) {
         xy = xyFromIndex(i)
-        return "translate(" + xy[0] + "," + xy[1] + ")";
+        return "translate(" + xy[0] + "," + (xy[1] + (topMargin-barWidth*(numRows/2))/2)+ ")";
       });
 
 /* Functions to be called back from buttons*/
@@ -404,13 +446,35 @@ lineTitle.attr("x", 10)
 // data for the new meme.
 
 function changeMeme(d) {
+
+  function karmaToSampleRate(karma) {
+    console.log(karma)
+    if (karma > 2005038) {
+      return 0.25
+    }
+    if (karma > 1117904) {
+      return 0.5
+    }
+    return 1
+
+  }
+
   // Do Ajax Query
 
   titletext.text(d.name) 
   // If cached, no need to do query.
+  sampleRate = 1
+
   if (d.name in animalData){
-    update_data(animalData[d.name])
+
+    sampleRate = karmaToSampleRate(d.karma)
+    samplingRateText.text(sampleRate + "x")
+    vAxisTop.transition().duration(250).attr("y1", sampleRate*height/2).attr("y2", sampleRate*height/2)
+    vAxisBottom.transition().duration(250).attr("y1", -sampleRate*height/2).attr("y2", -sampleRate*height/2)
+    update_data(animalData[d.name], sampleRate)
+
     return;
+
   }
 
   // Otherwise do query
@@ -419,9 +483,14 @@ function changeMeme(d) {
     logme = xhr.responseText;
     rawData = JSON.parse(logme)
     animalData[d.name] = process(rawData)
-    update_data(animalData[d.name])
+
+    sampleRate = karmaToSampleRate(d.karma)
+    samplingRateText.text(sampleRate + "x")    
+    vAxisTop.transition().duration(250).attr("y1", sampleRate*height/2).attr("y2", sampleRate*height/2)
+    vAxisBottom.transition().duration(250).attr("y1", -sampleRate*height/2).attr("y2", -sampleRate*height/2)
+    update_data(animalData[d.name], sampleRate)
+
   };
-  console.log(d.filename)
   xhr.open("GET","memes/" + d.filename); //assuming kgr.bss is plaintext
   xhr.send();
   // Otherwise, do query

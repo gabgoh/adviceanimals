@@ -18,8 +18,8 @@ for templateFile in os.listdir(r'D:\memeproject\code\html\memes'):
                  "karma": totalKarma})
     print "Processed ", templateFile
 
-data = sorted(data, key = lambda x: x["karma"])
-data.reverse()
+data = sorted(data, key = lambda x: x["name"])
+#data.reverse()
 
 jsonData = "templateData = " + json.dumps(data)
 

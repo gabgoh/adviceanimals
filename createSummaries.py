@@ -36,7 +36,7 @@ Step 2
 Append MetaData to Summary
 """
 
-f = open(r'D:\memeproject\data\adviceAnimalsSubmissions','r')
+f = open(r'D:\memeproject\data\AdviceAnimalsSubmissions','r')
 i = 0;
 for line in f:
     i = i + 1;
@@ -47,11 +47,12 @@ for line in f:
         thumbs[mId]['url'] = data['url']
         thumbs[mId]['ups'] = data['ups']
         thumbs[mId]['downs'] = data['downs']
-        thumbs[mId]['created'] = data['created']
-    if i % 10000==0:
+        thumbs[mId]['created'] = data['created_utc']
+
+    if i % 10000 == 0:
         print "Progress at" , i
         gc.collect()
 
-fp = open(r'D:\memeproject\ThumbsnailSummaryTitles','w')
+fp = open(r'D:\memeproject\ThumbsnailSummaryTitlesAll','w')
 pickle.dump(thumbs, fp)
 fp.close()

@@ -1,7 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bf6c6ab2-5ecd-40a8-a15b-47536e688c56" name="Default" comment="" />
+    <list default="true" id="bf6c6ab2-5ecd-40a8-a15b-47536e688c56" name="Default" comment="">
+      <change type="DELETED" beforePath="D:\memeproject\code\html\memes\English_Motherfucker.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\memeproject\code\html\memes\Evil_Plotting_Raccoon.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\memeproject\code\html\memes\Horrifying_House_Guest.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\memeproject\code\html\memes\Mad_Advice_Mallard.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\memeproject\code\html\memes\Mad_Karma.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\memeproject\code\html\memes\Overly_Manly_Man.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\memeproject\code\html\memes\Paranoid_Jigglypuff.js" afterPath="" />
+      <change type="DELETED" beforePath="D:\memeproject\code\refine.ipynb" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/3rd_World_Success_Kid.js" afterPath="$PROJECT_DIR$/html/memes/3rd_World_Success_Kid.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/90's_Problems.js" afterPath="$PROJECT_DIR$/html/memes/90's_Problems.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Aaand_It's_Gone.js" afterPath="$PROJECT_DIR$/html/memes/Aaand_It's_Gone.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Actual_Advice_Mallard.js" afterPath="$PROJECT_DIR$/html/memes/Actual_Advice_Mallard.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Advice_Dog.js" afterPath="$PROJECT_DIR$/html/memes/Advice_Dog.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Advice_God.js" afterPath="$PROJECT_DIR$/html/memes/Advice_God.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Almost_Politically_Correct_Redneck.js" afterPath="$PROJECT_DIR$/html/memes/Almost_Politically_Correct_Redneck.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Am_I_The_Only_One.js" afterPath="$PROJECT_DIR$/html/memes/Am_I_The_Only_One.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Ancient_Aliens.js" afterPath="$PROJECT_DIR$/html/memes/Ancient_Aliens.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Annoyed_Picard.js" afterPath="$PROJECT_DIR$/html/memes/Annoyed_Picard.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Annoying_Childhood_Friend.js" afterPath="$PROJECT_DIR$/html/memes/Annoying_Childhood_Friend.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Annoying_Facebook_Girl.js" afterPath="$PROJECT_DIR$/html/memes/Annoying_Facebook_Girl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Anti-Joke_Chicken_(Rooster).js" afterPath="$PROJECT_DIR$/html/memes/Anti-Joke_Chicken_(Rooster).js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Awkward_Penguin.js" afterPath="$PROJECT_DIR$/html/memes/Awkward_Penguin.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Back_In_My_Day_Grandpa.js" afterPath="$PROJECT_DIR$/html/memes/Back_In_My_Day_Grandpa.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Bad_Advice_Mallard.js" afterPath="$PROJECT_DIR$/html/memes/Bad_Advice_Mallard.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Bear_Grylls.js" afterPath="$PROJECT_DIR$/html/memes/Bear_Grylls.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Brace_Yourself.js" afterPath="$PROJECT_DIR$/html/memes/Brace_Yourself.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Captain_Obvious.js" afterPath="$PROJECT_DIR$/html/memes/Captain_Obvious.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Chemistry_Cat.js" afterPath="$PROJECT_DIR$/html/memes/Chemistry_Cat.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/College_Freshman.js" afterPath="$PROJECT_DIR$/html/memes/College_Freshman.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/College_Liberal.js" afterPath="$PROJECT_DIR$/html/memes/College_Liberal.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Condescending_Wonka.js" afterPath="$PROJECT_DIR$/html/memes/Condescending_Wonka.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Confession_Bear.js" afterPath="$PROJECT_DIR$/html/memes/Confession_Bear.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Confession_Kid.js" afterPath="$PROJECT_DIR$/html/memes/Confession_Kid.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Confused_Gandalf.js" afterPath="$PROJECT_DIR$/html/memes/Confused_Gandalf.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Conspiracy_Keanu.js" afterPath="$PROJECT_DIR$/html/memes/Conspiracy_Keanu.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Courage_Wolf.js" afterPath="$PROJECT_DIR$/html/memes/Courage_Wolf.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Dating_Site_Murderer.js" afterPath="$PROJECT_DIR$/html/memes/Dating_Site_Murderer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Depression_Dog.js" afterPath="$PROJECT_DIR$/html/memes/Depression_Dog.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Drunk_Baby.js" afterPath="$PROJECT_DIR$/html/memes/Drunk_Baby.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/First_Day_On_The_Internet_Kid.js" afterPath="$PROJECT_DIR$/html/memes/First_Day_On_The_Internet_Kid.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/First_World_Cat_Problems.js" afterPath="$PROJECT_DIR$/html/memes/First_World_Cat_Problems.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/First_World_Problem.js" afterPath="$PROJECT_DIR$/html/memes/First_World_Problem.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Forever_Alone.js" afterPath="$PROJECT_DIR$/html/memes/Forever_Alone.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Forever_Resentful_Mother.js" afterPath="$PROJECT_DIR$/html/memes/Forever_Resentful_Mother.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Foul_Bachelor_Frog.js" afterPath="$PROJECT_DIR$/html/memes/Foul_Bachelor_Frog.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Foul_Bachelorette_Frog.js" afterPath="$PROJECT_DIR$/html/memes/Foul_Bachelorette_Frog.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Fuck_Me,_Right.js" afterPath="$PROJECT_DIR$/html/memes/Fuck_Me,_Right.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Gangster_Baby.js" afterPath="$PROJECT_DIR$/html/memes/Gangster_Baby.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Good_Girl_Gina.js" afterPath="$PROJECT_DIR$/html/memes/Good_Girl_Gina.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Good_Guy_Greg.js" afterPath="$PROJECT_DIR$/html/memes/Good_Guy_Greg.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Grandma_Finds_The_Internet.js" afterPath="$PROJECT_DIR$/html/memes/Grandma_Finds_The_Internet.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Grinds_My_Gears.js" afterPath="$PROJECT_DIR$/html/memes/Grinds_My_Gears.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/High_Expectations_Asian_Father.js" afterPath="$PROJECT_DIR$/html/memes/High_Expectations_Asian_Father.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/I_Dare_You_Samuel_Jackson.js" afterPath="$PROJECT_DIR$/html/memes/I_Dare_You_Samuel_Jackson.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/I_Should_Buy_A_Boat.js" afterPath="$PROJECT_DIR$/html/memes/I_Should_Buy_A_Boat.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/I_Too_Like_To_Live_Dangerously.js" afterPath="$PROJECT_DIR$/html/memes/I_Too_Like_To_Live_Dangerously.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Idiot_Nerd_Girl.js" afterPath="$PROJECT_DIR$/html/memes/Idiot_Nerd_Girl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Insanity_Wolf.js" afterPath="$PROJECT_DIR$/html/memes/Insanity_Wolf.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Joker_Mind_Loss.js" afterPath="$PROJECT_DIR$/html/memes/Joker_Mind_Loss.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Joseph_Ducreux.js" afterPath="$PROJECT_DIR$/html/memes/Joseph_Ducreux.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Lame_Joke_Eel.js" afterPath="$PROJECT_DIR$/html/memes/Lame_Joke_Eel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Lame_Pun_Raccoon.js" afterPath="$PROJECT_DIR$/html/memes/Lame_Pun_Raccoon.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Lazy_College_Senior.js" afterPath="$PROJECT_DIR$/html/memes/Lazy_College_Senior.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Lazy_Spiderman.js" afterPath="$PROJECT_DIR$/html/memes/Lazy_Spiderman.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Matrix_Morpheus.js" afterPath="$PROJECT_DIR$/html/memes/Matrix_Morpheus.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Musically_Oblivious_8th_Grader.js" afterPath="$PROJECT_DIR$/html/memes/Musically_Oblivious_8th_Grader.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Not_Sure_Fry.js" afterPath="$PROJECT_DIR$/html/memes/Not_Sure_Fry.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Oblivious_Suburban_Mom.js" afterPath="$PROJECT_DIR$/html/memes/Oblivious_Suburban_Mom.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/One_Does_Not_Simply.js" afterPath="$PROJECT_DIR$/html/memes/One_Does_Not_Simply.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Overly_Attached_Girlfriend.js" afterPath="$PROJECT_DIR$/html/memes/Overly_Attached_Girlfriend.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Paranoid_Parrot.js" afterPath="$PROJECT_DIR$/html/memes/Paranoid_Parrot.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Pepperidge_Farm_Remembers.js" afterPath="$PROJECT_DIR$/html/memes/Pepperidge_Farm_Remembers.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Philosoraptor.js" afterPath="$PROJECT_DIR$/html/memes/Philosoraptor.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Priority_Peter.js" afterPath="$PROJECT_DIR$/html/memes/Priority_Peter.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Redditor's_Wife.js" afterPath="$PROJECT_DIR$/html/memes/Redditor's_Wife.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.ipynb_checkpoints/RefineThumbs-checkpoint.ipynb" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/RefineThumbs-checkpoint.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RefineThumbs.ipynb" afterPath="$PROJECT_DIR$/RefineThumbs.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Revenge_Band_Kid.js" afterPath="$PROJECT_DIR$/html/memes/Revenge_Band_Kid.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Schrute_Facts.js" afterPath="$PROJECT_DIR$/html/memes/Schrute_Facts.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Scumbag_Brain.js" afterPath="$PROJECT_DIR$/html/memes/Scumbag_Brain.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Scumbag_Stacy.js" afterPath="$PROJECT_DIR$/html/memes/Scumbag_Stacy.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Scumbag_Steve.js" afterPath="$PROJECT_DIR$/html/memes/Scumbag_Steve.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Sexually_Oblivious_Rhino.js" afterPath="$PROJECT_DIR$/html/memes/Sexually_Oblivious_Rhino.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Sheltering_Suburban_Mom.js" afterPath="$PROJECT_DIR$/html/memes/Sheltering_Suburban_Mom.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Skeptical_Third_World_Kid.js" afterPath="$PROJECT_DIR$/html/memes/Skeptical_Third_World_Kid.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Slow_Poke.js" afterPath="$PROJECT_DIR$/html/memes/Slow_Poke.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Smug_Spongebob.js" afterPath="$PROJECT_DIR$/html/memes/Smug_Spongebob.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Socially_Awesome_Penguin.js" afterPath="$PROJECT_DIR$/html/memes/Socially_Awesome_Penguin.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Success_Kid.js" afterPath="$PROJECT_DIR$/html/memes/Success_Kid.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Successful_Black_Man.js" afterPath="$PROJECT_DIR$/html/memes/Successful_Black_Man.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Sudden_Clarity_Clarence.js" afterPath="$PROJECT_DIR$/html/memes/Sudden_Clarity_Clarence.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Tech_Impaired_Duck.js" afterPath="$PROJECT_DIR$/html/memes/Tech_Impaired_Duck.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/The_Most_Interesting_Man_In_The_World.js" afterPath="$PROJECT_DIR$/html/memes/The_Most_Interesting_Man_In_The_World.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/The_Rent_Is_Too_High.js" afterPath="$PROJECT_DIR$/html/memes/The_Rent_Is_Too_High.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Tough_Spongebob.js" afterPath="$PROJECT_DIR$/html/memes/Tough_Spongebob.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Vengeance_Dad.js" afterPath="$PROJECT_DIR$/html/memes/Vengeance_Dad.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/What_Year_Is_It.js" afterPath="$PROJECT_DIR$/html/memes/What_Year_Is_It.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/X,_X_Everywhere.js" afterPath="$PROJECT_DIR$/html/memes/X,_X_Everywhere.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Y_U_NO.js" afterPath="$PROJECT_DIR$/html/memes/Y_U_NO.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Yeah_That'd_Be_Great.js" afterPath="$PROJECT_DIR$/html/memes/Yeah_That'd_Be_Great.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Yo_Dawg_Xzibit.js" afterPath="$PROJECT_DIR$/html/memes/Yo_Dawg_Xzibit.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/You're_Bad_And_You_Should_Feel_Bad.js" afterPath="$PROJECT_DIR$/html/memes/You're_Bad_And_You_Should_Feel_Bad.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/You're_Gonna_Have_A_Bad_Time.js" afterPath="$PROJECT_DIR$/html/memes/You're_Gonna_Have_A_Bad_Time.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/createSummaries.py" afterPath="$PROJECT_DIR$/createSummaries.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/morefoamy.html" afterPath="$PROJECT_DIR$/html/morefoamy.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sortThumbs.py" afterPath="$PROJECT_DIR$/sortThumbs.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/templateInfo.js" afterPath="$PROJECT_DIR$/html/templateInfo.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templatesToJSON.py" afterPath="$PROJECT_DIR$/templatesToJSON.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thumbSortToJSON.py" afterPath="$PROJECT_DIR$/thumbSortToJSON.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="code.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,13 +132,104 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="thumbSortToJSON.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="distance.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/distance.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+              <folding>
+                <element signature="e#0#17#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="thumbSortToJSON.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/thumbSortToJSON.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.16453901">
-              <caret line="79" column="35" selection-start-line="79" selection-start-column="35" selection-end-line="79" selection-end-column="35" />
+            <state vertical-scroll-proportion="-18.241379">
+              <caret line="166" column="44" selection-start-line="166" selection-start-column="44" selection-end-line="166" selection-end-column="44" />
               <folding>
                 <element signature="e#23#47#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="scrapeThumbs.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scrapeThumbs.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="54" column="40" selection-start-line="54" selection-start-column="40" selection-end-line="54" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="processTemplates.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/processTemplates.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RefineThumbs.ipynb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RefineThumbs.ipynb">
+          <provider selected="true" editor-type-id="ipnb-editor">
+            <state>
+              <selected id="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="templatesToJSON.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templatesToJSON.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.51440924">
+              <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+              <folding>
+                <element signature="e#24#33#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="visualizeCompressed.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/visualizeCompressed.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="createSummaries.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/createSummaries.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="53" column="20" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="20" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sortThumbs.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sortThumbs.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="15" column="41" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
+              <folding>
+                <element signature="e#0#22#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -55,15 +257,15 @@
         <option value="$PROJECT_DIR$/distance.py" />
         <option value="$PROJECT_DIR$/html/morefoamy.html" />
         <option value="$PROJECT_DIR$/clustering.py" />
-        <option value="$PROJECT_DIR$/createSummaries.py" />
         <option value="$PROJECT_DIR$/visualizeThumbSort.py" />
         <option value="$PROJECT_DIR$/doSomethingWithTemplates.py" />
         <option value="$PROJECT_DIR$/processTemplates.py" />
         <option value="$PROJECT_DIR$/README" />
         <option value="$PROJECT_DIR$/scrapeThumbs.py" />
-        <option value="$PROJECT_DIR$/sortThumbs.py" />
         <option value="$PROJECT_DIR$/Refine Memes.ipynb" />
         <option value="$PROJECT_DIR$/refine.ipynb" />
+        <option value="$PROJECT_DIR$/createSummaries.py" />
+        <option value="$PROJECT_DIR$/sortThumbs.py" />
         <option value="$PROJECT_DIR$/templatesToJSON.py" />
         <option value="$PROJECT_DIR$/thumbSortToJSON.py" />
       </list>
@@ -73,9 +275,9 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="691" />
-    <option name="y" value="96" />
-    <option name="width" value="1258" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1924" />
     <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -101,8 +303,8 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -136,23 +338,6 @@
     <property name="com.intellij.ide.scratch.NewScratchFileAction" value="Python" />
   </component>
   <component name="RunManager" selected="Python.templatesToJSON">
-    <configuration default="false" name="visualizeThumbSort" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="code" />
-      <option name="SCRIPT_NAME" value="D:\memeproject\code\thumbSortToJSON.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
     <configuration default="false" name="processTemplates" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -217,6 +402,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="code" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/templatesToJSON.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="createSummaries" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="code" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/createSummaries.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -344,19 +546,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.visualizeThumbSort" />
-      <item index="1" class="java.lang.String" itemvalue="Python.processTemplates" />
-      <item index="2" class="java.lang.String" itemvalue="Python.sortThumbs" />
-      <item index="3" class="java.lang.String" itemvalue="Python.thumbSortToJSON" />
-      <item index="4" class="java.lang.String" itemvalue="Python.templatesToJSON" />
+      <item index="0" class="java.lang.String" itemvalue="Python.processTemplates" />
+      <item index="1" class="java.lang.String" itemvalue="Python.sortThumbs" />
+      <item index="2" class="java.lang.String" itemvalue="Python.thumbSortToJSON" />
+      <item index="3" class="java.lang.String" itemvalue="Python.templatesToJSON" />
+      <item index="4" class="java.lang.String" itemvalue="Python.createSummaries" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python.templatesToJSON" />
         <item index="1" class="java.lang.String" itemvalue="Python.thumbSortToJSON" />
-        <item index="2" class="java.lang.String" itemvalue="Python.processTemplates" />
-        <item index="3" class="java.lang.String" itemvalue="Python.sortThumbs" />
-        <item index="4" class="java.lang.String" itemvalue="Python.visualizeThumbSort" />
+        <item index="2" class="java.lang.String" itemvalue="Python.sortThumbs" />
+        <item index="3" class="java.lang.String" itemvalue="Python.createSummaries" />
+        <item index="4" class="java.lang.String" itemvalue="Python.processTemplates" />
       </list>
     </recent_temporary>
   </component>
@@ -405,28 +607,28 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="691" y="96" width="1258" height="1056" extended-state="0" />
+    <frame x="-8" y="-8" width="1924" height="1056" extended-state="1" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16022544" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.102725364" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19535375" sideWeight="0.37604168" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2375924" sideWeight="0.10691824" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.6328502" sideWeight="0.83958334" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31236896" sideWeight="0.83958334" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18585005" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2375924" sideWeight="0.8930818" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19429778" sideWeight="0.5765625" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19535375" sideWeight="0.62395835" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946146" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39915523" sideWeight="0.49791667" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -450,7 +652,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="6" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -470,7 +672,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="36" column="3" selection-start-line="36" selection-start-column="3" selection-end-line="36" selection-end-column="3" />
           <folding>
-            <element signature="e#0#13#0" expanded="false" />
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -545,7 +747,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="36" column="3" selection-start-line="36" selection-start-column="3" selection-end-line="36" selection-end-column="3" />
           <folding>
-            <element signature="e#0#13#0" expanded="false" />
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -610,7 +812,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#13#0" expanded="false" />
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -682,7 +884,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding>
-            <element signature="e#0#13#0" expanded="false" />
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -732,7 +934,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#13#0" expanded="false" />
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -803,30 +1005,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/createSummaries.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="55" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="55" />
-          <folding>
-            <element signature="e#0#13#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/distance.py">
+    <entry file="file://$PROJECT_DIR$/visualizeCompressed.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
           <folding>
-            <element signature="e#0#17#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -841,40 +1032,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RefineThumbs.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/refine.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/visualizeCompressed.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templatesToJSON.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="47" selection-start-line="20" selection-start-column="47" selection-end-line="20" selection-end-column="47" />
-          <folding>
-            <element signature="e#24#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scrapeThumbs.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -883,10 +1040,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/createSummaries.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="53" column="20" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RefineThumbs.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Anaconda/Lib/json/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/HashiCorp/Vagrant/bin/image-dreamer-master/dreamify.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.61445785">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sortThumbs.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+          <caret line="15" column="41" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
           </folding>
@@ -895,10 +1083,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/thumbSortToJSON.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16453901">
-          <caret line="79" column="35" selection-start-line="79" selection-start-column="35" selection-end-line="79" selection-end-column="35" />
+        <state vertical-scroll-proportion="-18.241379">
+          <caret line="166" column="44" selection-start-line="166" selection-start-column="44" selection-end-line="166" selection-end-column="44" />
           <folding>
             <element signature="e#23#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/distance.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templatesToJSON.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.51440924">
+          <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+          <folding>
+            <element signature="e#24#33#0" expanded="true" />
           </folding>
         </state>
       </provider>

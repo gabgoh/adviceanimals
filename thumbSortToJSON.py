@@ -1,5 +1,7 @@
 __author__ = 'Gabriel'
 from skimage import data
+import skimage.transform
+
 from numpy import *
 import pickle
 from matplotlib.pyplot import *
@@ -26,29 +28,29 @@ clickedList = previewThumbs([meme['id'] + '.jpg' for meme in memes], (n,n))
 
 """
 
-def previewThumbs(thumbList, dims):
+def previewThumbs(thumbList, dims, plottitle=""):
 
+    tsize = 50
     clickedList = []
     thumbdir = 'D:\\memeproject\\thumbnails\\'
-    pview = uint8(np.zeros((70*dims[0],70*dims[1],3)));
+    pview = uint8(np.zeros((tsize*dims[0],tsize*dims[1],3)));
     for i in range(0,dims[0]*dims[1]):
         if i >= len(thumbList) :
             break
-        thumb = data.load(thumbdir + thumbList[i])[:,:,0:3]
-        if thumb.shape[1] != 70:
-            blankRight = uint8(zeros((thumb.shape[0], 70 - shape(thumb)[1],3)))
-            thumb = concatenate((thumb, blankRight),axis=1)
-        blankBottom = uint8(zeros((70 - shape(thumb)[0],70,3)))
-        pthumb = concatenate((thumb, blankBottom))
+        # Sometimes images have 4 channels. Crop it to 3
+        pthumb = skimage.transform.resize(data.load(thumbdir + thumbList[i])[:,:,0:3], (tsize,tsize))
+        pthumb = uint8(255*pthumb);
         x = i/dims[1]
         y = i - dims[1]*(i/dims[1])
-        pview[70*x:70*(x+1), 70*y:70*(y+1)] = pthumb
+
+        pview[tsize*x:tsize*(x+1), tsize*y:tsize*(y+1),:] = pthumb
 
     pviewOriginal = copy(pview)
     # Generate Plot and assign callback on click
     thumbPlot = figure()
     ax = thumbPlot.add_subplot(111)
     imageWindow = ax.imshow(pview)
+    title(plottitle)
 
     def coord2ij(coord):
         # Coordinate to (i,j) position on screen
@@ -56,16 +58,16 @@ def previewThumbs(thumbList, dims):
 
     def highlight(coord):
         ij = coord2ij(coord)
-        x = (ij[0]*70,(ij[0]+1)*70)
-        y = (ij[1]*70,(ij[1]+1)*70)
+        x = (ij[0]*tsize,(ij[0]+1)*tsize)
+        y = (ij[1]*tsize,(ij[1]+1)*tsize)
 
         pview[ x[0]:x[1] , y[0]:y[1] ] = pview[ x[0]:x[1] , y[0]:y[1] ] + 10
         return pview
 
     def setborder(coord):
         ij = coord2ij(coord)
-        x = (ij[0]*70,(ij[0]+1)*70)
-        y = (ij[1]*70,(ij[1]+1)*70)
+        x = (ij[0]*tsize,(ij[0]+1)*tsize)
+        y = (ij[1]*tsize,(ij[1]+1)*tsize)
 
         pview[ x[0]:x[1] , y[0]:y[1] ] = 0
         pview[ (x[0] + 3):(x[1] - 3) , (y[0] + 3):(y[1] - 3) ] = 255
@@ -77,8 +79,8 @@ def previewThumbs(thumbList, dims):
     def unhighlight(coord):
         ij = coord2ij(coord)
 
-        x = (ij[0]*70,(ij[0]+1)*70)
-        y = (ij[1]*70,(ij[1]+1)*70)
+        x = (ij[0]*tsize,(ij[0]+1)*tsize)
+        y = (ij[1]*tsize,(ij[1]+1)*tsize)
 
         pview[ x[0]:x[1] , y[0]:y[1] ] = pviewOriginal[ x[0]:x[1] , y[0]:y[1] ]
         return pview
@@ -89,7 +91,7 @@ def previewThumbs(thumbList, dims):
             # User clicked outside the box
             return
 
-        ij = (math.floor(event.ydata/70), math.floor(event.xdata/70))
+        ij = (math.floor(event.ydata/tsize), math.floor(event.xdata/tsize))
         coord = int((ij[0] * dims[1]) + ij[1])
 
         if event.button == 2:
@@ -150,14 +152,14 @@ if __name__ == "__main__":
 
     # Load all summaries
 
-    fp = open(r'D:\memeproject\thumbsnailSummaryTitles','r')
+    fp = open(r'D:\memeproject\thumbsnailSummaryTitlesAll','r')
     allThumbs = pickle.load(fp)
     fp.close()
 
     print "Summaries Loaded"
 
-    templateList = os.listdir(r'D:\memeproject\templates')
-    templateList = ["10_Guy.jpg"]
+    templateList = os.listdir(r'D:\memeproject\templates')[3:]
+    templateList = ["College_Freshman.jpg"]
 
     for currentMemeTemplateName in templateList:
 
@@ -171,18 +173,18 @@ if __name__ == "__main__":
         fp.close()
 
         thumbList = [i[1] for i in s]
-        clickedList = previewThumbs(thumbList, (10,10))
+        clickedList = previewThumbs(thumbList, (30,80), plottitle = currentMemeTemplateName)
         show()
 
+        if len(clickedList) != 0:
+            """
+            Turn ClickedList into a JSON File, ready for use in the browser.
+            Ignore if no icons selected.
+            """
+            from operator import itemgetter
+            import json
 
-        """
-        Turn ClickedList into a JSON File, ready for use in the browser.
-        """
-        from operator import itemgetter
-        import json
-
-        selectedMemes = itemgetter(*clickedList)(s)
-
-        fp = open('D:\\memeproject\\code\html\\memes\\' + currentMemeTemplateName[0:-4] + ".js", 'w')
-        json.dump(toJSON(allThumbs, selectedMemes), fp)
-        fp.close()
+            selectedMemes = itemgetter(*clickedList)(s)
+            fp = open('D:\\memeproject\\code\html\\memes\\' + currentMemeTemplateName[0:-4] + ".js", 'w')
+            json.dump(toJSON(allThumbs,  [meme[1] for meme in selectedMemes]), fp)
+            fp.close()

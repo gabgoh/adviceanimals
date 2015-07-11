@@ -21,7 +21,7 @@ def compareAll(imageFileName, thumbs):
         if count > 1000000:
             break
         if count % 1000==0:
-            print "At " + str(count)
+            print "\rAt " + str(count),
     
     s = sorted(comparisons)
     
@@ -31,7 +31,7 @@ def compareAll(imageFileName, thumbs):
 
 if __name__ == "__main__":
 
-    fp = open('D:\\memeproject\\ThumbsnailSummaryTitles','r')
+    fp = open('D:\\memeproject\\ThumbsnailSummaryTitlesAll','r')
     thumbs = pickle.load(fp)
     fp.close()
     print "Thumbnail Summaries Loaded"
@@ -43,4 +43,5 @@ if __name__ == "__main__":
 
         fp = open('D:\\memeproject\\thumbssort\\' + name, 'w')
         pickle.dump((s, cutoff), fp)
+        print "Wrote to", ('D:\\memeproject\\thumbssort\\' + name)
         fp.close()
