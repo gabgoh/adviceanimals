@@ -2,116 +2,49 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bf6c6ab2-5ecd-40a8-a15b-47536e688c56" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\memeproject\code\html\memes\English_Motherfucker.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\memeproject\code\html\memes\Evil_Plotting_Raccoon.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\memeproject\code\html\memes\Horrifying_House_Guest.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\memeproject\code\html\memes\Mad_Advice_Mallard.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\memeproject\code\html\memes\Mad_Karma.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\memeproject\code\html\memes\Overly_Manly_Man.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\memeproject\code\html\memes\Paranoid_Jigglypuff.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\memeproject\code\refine.ipynb" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/3rd_World_Success_Kid.js" afterPath="$PROJECT_DIR$/html/memes/3rd_World_Success_Kid.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/90's_Problems.js" afterPath="$PROJECT_DIR$/html/memes/90's_Problems.js" />
+      <change type="DELETED" beforePath="D:\memeproject\code\html\testbed.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Aaand_It's_Gone.js" afterPath="$PROJECT_DIR$/html/memes/Aaand_It's_Gone.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Actual_Advice_Mallard.js" afterPath="$PROJECT_DIR$/html/memes/Actual_Advice_Mallard.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Advice_Dog.js" afterPath="$PROJECT_DIR$/html/memes/Advice_Dog.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Advice_God.js" afterPath="$PROJECT_DIR$/html/memes/Advice_God.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Almost_Politically_Correct_Redneck.js" afterPath="$PROJECT_DIR$/html/memes/Almost_Politically_Correct_Redneck.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Am_I_The_Only_One.js" afterPath="$PROJECT_DIR$/html/memes/Am_I_The_Only_One.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Ancient_Aliens.js" afterPath="$PROJECT_DIR$/html/memes/Ancient_Aliens.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Annoyed_Picard.js" afterPath="$PROJECT_DIR$/html/memes/Annoyed_Picard.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Annoying_Childhood_Friend.js" afterPath="$PROJECT_DIR$/html/memes/Annoying_Childhood_Friend.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Annoying_Facebook_Girl.js" afterPath="$PROJECT_DIR$/html/memes/Annoying_Facebook_Girl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Anti-Joke_Chicken_(Rooster).js" afterPath="$PROJECT_DIR$/html/memes/Anti-Joke_Chicken_(Rooster).js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Awkward_Penguin.js" afterPath="$PROJECT_DIR$/html/memes/Awkward_Penguin.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Back_In_My_Day_Grandpa.js" afterPath="$PROJECT_DIR$/html/memes/Back_In_My_Day_Grandpa.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Bad_Advice_Mallard.js" afterPath="$PROJECT_DIR$/html/memes/Bad_Advice_Mallard.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Bear_Grylls.js" afterPath="$PROJECT_DIR$/html/memes/Bear_Grylls.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Brace_Yourself.js" afterPath="$PROJECT_DIR$/html/memes/Brace_Yourself.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Captain_Obvious.js" afterPath="$PROJECT_DIR$/html/memes/Captain_Obvious.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Chemistry_Cat.js" afterPath="$PROJECT_DIR$/html/memes/Chemistry_Cat.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/College_Freshman.js" afterPath="$PROJECT_DIR$/html/memes/College_Freshman.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/College_Liberal.js" afterPath="$PROJECT_DIR$/html/memes/College_Liberal.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Condescending_Wonka.js" afterPath="$PROJECT_DIR$/html/memes/Condescending_Wonka.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Confession_Bear.js" afterPath="$PROJECT_DIR$/html/memes/Confession_Bear.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Confession_Kid.js" afterPath="$PROJECT_DIR$/html/memes/Confession_Kid.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Confused_Gandalf.js" afterPath="$PROJECT_DIR$/html/memes/Confused_Gandalf.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Conspiracy_Keanu.js" afterPath="$PROJECT_DIR$/html/memes/Conspiracy_Keanu.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Courage_Wolf.js" afterPath="$PROJECT_DIR$/html/memes/Courage_Wolf.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Dating_Site_Murderer.js" afterPath="$PROJECT_DIR$/html/memes/Dating_Site_Murderer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Depression_Dog.js" afterPath="$PROJECT_DIR$/html/memes/Depression_Dog.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Drunk_Baby.js" afterPath="$PROJECT_DIR$/html/memes/Drunk_Baby.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/First_Day_On_The_Internet_Kid.js" afterPath="$PROJECT_DIR$/html/memes/First_Day_On_The_Internet_Kid.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/First_World_Cat_Problems.js" afterPath="$PROJECT_DIR$/html/memes/First_World_Cat_Problems.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/First_World_Problem.js" afterPath="$PROJECT_DIR$/html/memes/First_World_Problem.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Forever_Alone.js" afterPath="$PROJECT_DIR$/html/memes/Forever_Alone.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Forever_Resentful_Mother.js" afterPath="$PROJECT_DIR$/html/memes/Forever_Resentful_Mother.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Foul_Bachelor_Frog.js" afterPath="$PROJECT_DIR$/html/memes/Foul_Bachelor_Frog.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Foul_Bachelorette_Frog.js" afterPath="$PROJECT_DIR$/html/memes/Foul_Bachelorette_Frog.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Fuck_Me,_Right.js" afterPath="$PROJECT_DIR$/html/memes/Fuck_Me,_Right.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Gangster_Baby.js" afterPath="$PROJECT_DIR$/html/memes/Gangster_Baby.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Good_Girl_Gina.js" afterPath="$PROJECT_DIR$/html/memes/Good_Girl_Gina.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Good_Guy_Greg.js" afterPath="$PROJECT_DIR$/html/memes/Good_Guy_Greg.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Grandma_Finds_The_Internet.js" afterPath="$PROJECT_DIR$/html/memes/Grandma_Finds_The_Internet.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Grinds_My_Gears.js" afterPath="$PROJECT_DIR$/html/memes/Grinds_My_Gears.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/High_Expectations_Asian_Father.js" afterPath="$PROJECT_DIR$/html/memes/High_Expectations_Asian_Father.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/I_Dare_You_Samuel_Jackson.js" afterPath="$PROJECT_DIR$/html/memes/I_Dare_You_Samuel_Jackson.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/I_Should_Buy_A_Boat.js" afterPath="$PROJECT_DIR$/html/memes/I_Should_Buy_A_Boat.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/I_Too_Like_To_Live_Dangerously.js" afterPath="$PROJECT_DIR$/html/memes/I_Too_Like_To_Live_Dangerously.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Idiot_Nerd_Girl.js" afterPath="$PROJECT_DIR$/html/memes/Idiot_Nerd_Girl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Insanity_Wolf.js" afterPath="$PROJECT_DIR$/html/memes/Insanity_Wolf.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Joker_Mind_Loss.js" afterPath="$PROJECT_DIR$/html/memes/Joker_Mind_Loss.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Joseph_Ducreux.js" afterPath="$PROJECT_DIR$/html/memes/Joseph_Ducreux.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Lame_Joke_Eel.js" afterPath="$PROJECT_DIR$/html/memes/Lame_Joke_Eel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Lame_Pun_Raccoon.js" afterPath="$PROJECT_DIR$/html/memes/Lame_Pun_Raccoon.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Lazy_College_Senior.js" afterPath="$PROJECT_DIR$/html/memes/Lazy_College_Senior.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Lazy_Spiderman.js" afterPath="$PROJECT_DIR$/html/memes/Lazy_Spiderman.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Matrix_Morpheus.js" afterPath="$PROJECT_DIR$/html/memes/Matrix_Morpheus.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Musically_Oblivious_8th_Grader.js" afterPath="$PROJECT_DIR$/html/memes/Musically_Oblivious_8th_Grader.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Not_Sure_Fry.js" afterPath="$PROJECT_DIR$/html/memes/Not_Sure_Fry.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Oblivious_Suburban_Mom.js" afterPath="$PROJECT_DIR$/html/memes/Oblivious_Suburban_Mom.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/One_Does_Not_Simply.js" afterPath="$PROJECT_DIR$/html/memes/One_Does_Not_Simply.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Overly_Attached_Girlfriend.js" afterPath="$PROJECT_DIR$/html/memes/Overly_Attached_Girlfriend.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Paranoid_Parrot.js" afterPath="$PROJECT_DIR$/html/memes/Paranoid_Parrot.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Pepperidge_Farm_Remembers.js" afterPath="$PROJECT_DIR$/html/memes/Pepperidge_Farm_Remembers.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Philosoraptor.js" afterPath="$PROJECT_DIR$/html/memes/Philosoraptor.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Priority_Peter.js" afterPath="$PROJECT_DIR$/html/memes/Priority_Peter.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Redditor's_Wife.js" afterPath="$PROJECT_DIR$/html/memes/Redditor's_Wife.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.ipynb_checkpoints/RefineThumbs-checkpoint.ipynb" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/RefineThumbs-checkpoint.ipynb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RefineThumbs.ipynb" afterPath="$PROJECT_DIR$/RefineThumbs.ipynb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Revenge_Band_Kid.js" afterPath="$PROJECT_DIR$/html/memes/Revenge_Band_Kid.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Schrute_Facts.js" afterPath="$PROJECT_DIR$/html/memes/Schrute_Facts.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Scumbag_Brain.js" afterPath="$PROJECT_DIR$/html/memes/Scumbag_Brain.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Scumbag_Stacy.js" afterPath="$PROJECT_DIR$/html/memes/Scumbag_Stacy.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Scumbag_Steve.js" afterPath="$PROJECT_DIR$/html/memes/Scumbag_Steve.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Sexually_Oblivious_Rhino.js" afterPath="$PROJECT_DIR$/html/memes/Sexually_Oblivious_Rhino.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Sheltering_Suburban_Mom.js" afterPath="$PROJECT_DIR$/html/memes/Sheltering_Suburban_Mom.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Skeptical_Third_World_Kid.js" afterPath="$PROJECT_DIR$/html/memes/Skeptical_Third_World_Kid.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Slow_Poke.js" afterPath="$PROJECT_DIR$/html/memes/Slow_Poke.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Smug_Spongebob.js" afterPath="$PROJECT_DIR$/html/memes/Smug_Spongebob.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Socially_Awesome_Penguin.js" afterPath="$PROJECT_DIR$/html/memes/Socially_Awesome_Penguin.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Success_Kid.js" afterPath="$PROJECT_DIR$/html/memes/Success_Kid.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Successful_Black_Man.js" afterPath="$PROJECT_DIR$/html/memes/Successful_Black_Man.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Sudden_Clarity_Clarence.js" afterPath="$PROJECT_DIR$/html/memes/Sudden_Clarity_Clarence.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Tech_Impaired_Duck.js" afterPath="$PROJECT_DIR$/html/memes/Tech_Impaired_Duck.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/The_Most_Interesting_Man_In_The_World.js" afterPath="$PROJECT_DIR$/html/memes/The_Most_Interesting_Man_In_The_World.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/The_Rent_Is_Too_High.js" afterPath="$PROJECT_DIR$/html/memes/The_Rent_Is_Too_High.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Tough_Spongebob.js" afterPath="$PROJECT_DIR$/html/memes/Tough_Spongebob.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Vengeance_Dad.js" afterPath="$PROJECT_DIR$/html/memes/Vengeance_Dad.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/What_Year_Is_It.js" afterPath="$PROJECT_DIR$/html/memes/What_Year_Is_It.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/X,_X_Everywhere.js" afterPath="$PROJECT_DIR$/html/memes/X,_X_Everywhere.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Y_U_NO.js" afterPath="$PROJECT_DIR$/html/memes/Y_U_NO.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Yeah_That'd_Be_Great.js" afterPath="$PROJECT_DIR$/html/memes/Yeah_That'd_Be_Great.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/Yo_Dawg_Xzibit.js" afterPath="$PROJECT_DIR$/html/memes/Yo_Dawg_Xzibit.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/You're_Bad_And_You_Should_Feel_Bad.js" afterPath="$PROJECT_DIR$/html/memes/You're_Bad_And_You_Should_Feel_Bad.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/memes/You're_Gonna_Have_A_Bad_Time.js" afterPath="$PROJECT_DIR$/html/memes/You're_Gonna_Have_A_Bad_Time.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/createSummaries.py" afterPath="$PROJECT_DIR$/createSummaries.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/morefoamy.html" afterPath="$PROJECT_DIR$/html/morefoamy.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sortThumbs.py" afterPath="$PROJECT_DIR$/sortThumbs.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/templateInfo.js" afterPath="$PROJECT_DIR$/html/templateInfo.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templatesToJSON.py" afterPath="$PROJECT_DIR$/templatesToJSON.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/thumbSortToJSON.py" afterPath="$PROJECT_DIR$/thumbSortToJSON.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="code.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -147,7 +80,7 @@
       <file leaf-file-name="thumbSortToJSON.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/thumbSortToJSON.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.241379">
+            <state vertical-scroll-proportion="0.0">
               <caret line="166" column="44" selection-start-line="166" selection-start-column="44" selection-end-line="166" selection-end-column="44" />
               <folding>
                 <element signature="e#23#47#0" expanded="true" />
@@ -182,7 +115,7 @@
         <entry file="file://$PROJECT_DIR$/RefineThumbs.ipynb">
           <provider selected="true" editor-type-id="ipnb-editor">
             <state>
-              <selected id="11" />
+              <selected id="18" />
             </state>
           </provider>
         </entry>
@@ -190,8 +123,8 @@
       <file leaf-file-name="templatesToJSON.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templatesToJSON.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.51440924">
-              <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.14697406">
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding>
                 <element signature="e#24#33#0" expanded="true" />
               </folding>
@@ -303,8 +236,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -325,6 +256,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -607,16 +540,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1924" height="1056" extended-state="1" />
+    <frame x="-8" y="-8" width="1924" height="1056" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.102725364" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2375924" sideWeight="0.10691824" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2375924" sideWeight="0.11425576" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31236896" sideWeight="0.83958334" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18585005" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2375924" sideWeight="0.8930818" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2375924" sideWeight="0.8857442" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1053,7 +986,7 @@
     <entry file="file://$PROJECT_DIR$/RefineThumbs.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
-          <selected id="11" />
+          <selected id="18" />
         </state>
       </provider>
     </entry>
@@ -1081,16 +1014,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/thumbSortToJSON.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.241379">
-          <caret line="166" column="44" selection-start-line="166" selection-start-column="44" selection-end-line="166" selection-end-column="44" />
-          <folding>
-            <element signature="e#23#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/distance.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1101,10 +1024,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/thumbSortToJSON.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="166" column="44" selection-start-line="166" selection-start-column="44" selection-end-line="166" selection-end-column="44" />
+          <folding>
+            <element signature="e#23#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templatesToJSON.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51440924">
-          <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.14697406">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding>
             <element signature="e#24#33#0" expanded="true" />
           </folding>
