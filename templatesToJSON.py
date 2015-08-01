@@ -15,11 +15,12 @@ for templateFile in os.listdir(r'D:\memeproject\code\html\memes'):
         totalKarma = totalKarma + meme["pt"]
     data.append({"name": templateFile[0:-3].replace("_"," "),
                  "filename": templateFile,
-                 "karma": totalKarma})
+                 "karma": totalKarma,
+                 "memes" : len(memes)})
     print "Processed ", templateFile
 
-data = sorted(data, key = lambda x: x["name"])
-#data.reverse()
+data = sorted(data, key = lambda x: x["karma"])
+data.reverse()
 
 jsonData = "templateData = " + json.dumps(data)
 

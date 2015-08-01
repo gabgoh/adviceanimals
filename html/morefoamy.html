@@ -208,16 +208,16 @@ axis.data(dates.ticks(12))
     .attr("x", dates)
     .attr("y", height/2 + 15)
     .attr("text-anchor", "middle")
-    .text(function(d,i) {
-      if (i != 0 && i != 13){
-        return dates.tickFormat(10)(d);
-      } else {
-        return '';
-      }
-    });
+    .text(function(d,i) { return dates.tickFormat(10)(d); });
 
 samplingRateText = svg.append("text").attr("x",510).attr("y",-135).attr("class","title").text("1x")
 svg.append("text").attr("x",510).attr("y",-120).text("Sampling")
+
+totalKarma = svg.append("text").attr("x",510).attr("y",-75).attr("class","title").text("0")
+svg.append("text").attr("x",510).attr("y",-60).text("Karma")
+
+totalPosts = svg.append("text").attr("x",510).attr("y",-15).attr("class","title").text("0")
+svg.append("text").attr("x",510).attr("y",0).text("Memes")
 
 vAxisTop = svg.append('line')
     .attr('x1',-500)
@@ -347,13 +347,34 @@ function update_data(newAnimals, sampleRate) {
     {
       d3.select(this).style("fill", "red")
 
+
       currentTimeNewData = currentTimeData.data([d.ts*1000])
 
       currentTimeNewData.attr("transform", 
-        function(d) {return "translate(" + dates(d) + ",0)"} )
+        function(d) { return "translate(" + dates(d) + ",0)"} )
+      
+      currentTimeNewData.attr("center", 
+        function(d) { return dates(d) } )
+
+      currentTitleText.attr("transform", 
+        function (dd) {
+          var textLength =  d.ti.length*6.6;
+          var rightEnd   = parseFloat(this.parentNode.getAttribute("center")) + textLength;
+          var leftEnd    = parseFloat(this.parentNode.getAttribute("center")) - textLength;          
+          if (rightEnd > 700) {
+            return "translate(" + (700 - rightEnd)/2 + ",0)"
+          } 
+          if (leftEnd < -700) {
+            console.log("triggered")
+            return "translate(" + (-700 - leftEnd)/2 + ",0)"
+          }
+          return "translate(0,0)"
+          } )
+
 
       currentTitleText.text( function (dd) { return d.ti; } )
-      currentTimeText.text( function (dd) { return new Date(d.ts*1000) })
+      currentTitleText.attr("id", "memeName")
+      currentTimeText.text( function (dd) { return new Date(d.ts*1000).toString().substring(0,24) })
     })
     .on("click", function(d){
         window.open(
@@ -449,12 +470,22 @@ function changeMeme(d) {
 
   function karmaToSampleRate(karma) {
     console.log(karma)
+    if (karma > 3005038) {
+      return 0.15
+    }    
+
     if (karma > 2005038) {
-      return 0.25
+      return 0.4
     }
+
+    if (karma > 1417904) {
+      return 0.6
+    }
+
     if (karma > 1117904) {
-      return 0.5
+      return 0.8
     }
+
     return 1
 
   }
@@ -463,12 +494,15 @@ function changeMeme(d) {
 
   titletext.text(d.name) 
   // If cached, no need to do query.
+
   sampleRate = 1
 
   if (d.name in animalData){
 
     sampleRate = karmaToSampleRate(d.karma)
     samplingRateText.text(sampleRate + "x")
+    totalKarma.text(d.karma)
+    totalPosts.text(d.memes)
     vAxisTop.transition().duration(250).attr("y1", sampleRate*height/2).attr("y2", sampleRate*height/2)
     vAxisBottom.transition().duration(250).attr("y1", -sampleRate*height/2).attr("y2", -sampleRate*height/2)
     update_data(animalData[d.name], sampleRate)
@@ -486,6 +520,8 @@ function changeMeme(d) {
 
     sampleRate = karmaToSampleRate(d.karma)
     samplingRateText.text(sampleRate + "x")    
+    totalKarma.text(d.karma)
+    totalPosts.text(d.memes)
     vAxisTop.transition().duration(250).attr("y1", sampleRate*height/2).attr("y2", sampleRate*height/2)
     vAxisBottom.transition().duration(250).attr("y1", -sampleRate*height/2).attr("y2", -sampleRate*height/2)
     update_data(animalData[d.name], sampleRate)
@@ -541,7 +577,7 @@ square.append("circle")
     .on("mouseout", mouseOutThumb)    
     .transition()
       .duration(500)
-      .attr("r",function(d) { return Math.pow(d.karma, 0.6)/1600 })    
+      .attr("r",function(d) { return Math.pow(d.karma, 0.58)/1600 })    
 
 
 
