@@ -168,6 +168,25 @@ var thumbBar = d3.select("body").append("svg")
 Set Title, and Info Text
 */
 
+var loadCircle = title.append("svg")
+                      .attr("width","100px")
+                      .attr("height","22px")
+                      .style("position","absolute")
+                      .append("circle");
+
+loadCircle.attr("r", "3")
+          .attr("cx", "90")
+          .attr("cy", "12")
+          .style("visibility", "hidden");
+
+loadCircle.append("animate")
+          .attr("attributeType","CSS")
+          .attr("attributeName","opacity")
+          .attr("dur","0.7s")
+          .attr("repeatCount","indefinite")
+          .attr("values","1; 0.2; 0.5; 0.2; 1");
+
+
 var auto = completely(document.getElementById('Title'), {
     fontSize : '20px',
     fontFamily : 'monospace'
@@ -535,10 +554,11 @@ function changeMeme(d) {
   xhr = new XMLHttpRequest();
 
   xhr.onprogress = function () {
-    console.log("Progress")
+    loadCircle.style("visibility","visible")
   }
 
   xhr.onload = function() {
+
     logme = xhr.responseText;
     rawData = JSON.parse(logme)
     animalData[d.name] = process(rawData)
@@ -550,6 +570,7 @@ function changeMeme(d) {
     vAxisTop.transition().duration(250).attr("y1", sampleRate*height/2).attr("y2", sampleRate*height/2)
     vAxisBottom.transition().duration(250).attr("y1", -sampleRate*height/2).attr("y2", -sampleRate*height/2)
     update_data(animalData[d.name], sampleRate)
+    loadCircle.style("visibility","hidden")
 
   };
   xhr.open("GET","memes/" + d.filename); //assuming kgr.bss is plaintext
