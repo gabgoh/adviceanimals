@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
+<title>Advice Animals</title>
 <style>
 text {
   font: bold 12px monospace;
@@ -33,11 +34,12 @@ text {
 
 
 </style>
+
 <body>
+
 <script src="d3.min.js"></script>
 <script src="templateInfo.js"></script>
 <script src='complete.ly.1.0.1.js'></script>
-<div id='container'></div>
 
 <script>
 
@@ -148,7 +150,7 @@ Start SVGs Element
 
 var title = d3.select("body").append("div")
     .attr("id", "Title")
-    .attr("style", "position:absolute; margin:auto; top: -400px; left: 0; bottom: 0; right: 0; width:1225px; height:50px; z-index:10")
+    .attr("style", "position:absolute; margin:auto; top: -400px; left: 0px; bottom: 0; right: 0; width:1200px; height:50px; z-index:10")
 
 var svg = d3.select("body").append("svg")
     .attr("width", width + hBorder)
@@ -199,8 +201,9 @@ auto.input.style.fontWeight = "bold"
 auto.dropDown.hidden = true;
 
 auto.wrapper.style.transform = "translateX(100px)"
+auto.wrapper.style.width = "1100px"
 
-auto.setText("Pick or type and Advice Animal to begin")
+auto.setText("Pick or type and Advice Animal here to begin (e.g. Confession Bear)")
 
 auto.input.onclick = function () {
  auto.setText(""); 
@@ -626,5 +629,20 @@ square.append("circle")
       .attr("r",function(d) { return Math.pow(d.karma, 0.58)/1600 })    
 
 
-
 </script>
+
+<center style="position:absolute; margin:auto; top: 550px; left: 0; bottom: 0; right: 0; height:10px; font:bold 12px monospace">
+[Making of] by [Gabriel Goh] data provided by [<a href = "https://pushshift.io/"> Jason Baumgartner </a>]
+</center>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-65931696-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body>
