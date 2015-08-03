@@ -36,6 +36,9 @@ text {
 <body>
 <script src="d3.min.js"></script>
 <script src="templateInfo.js"></script>
+<script src='complete.ly.1.0.1.js'></script>
+<div id='container'></div>
+
 <script>
 
 /* 
@@ -143,10 +146,9 @@ function updateList(newdat, sampleRate) {
 Start SVGs Element
 */
 
-var title = d3.select("body").append("svg")
-    .attr("width", width + hBorder)
-    .attr("height", 100)
-    .attr("style", "position:absolute; margin:auto; top: -450px; left: 0; bottom: 0; right: 0;")
+var title = d3.select("body").append("div")
+    .attr("id", "Title")
+    .attr("style", "position:absolute; margin:auto; top: -400px; left: 0; bottom: 0; right: 0; width:1225px; height:50px; z-index:10")
 
 var svg = d3.select("body").append("svg")
     .attr("width", width + hBorder)
@@ -166,16 +168,33 @@ var thumbBar = d3.select("body").append("svg")
 Set Title, and Info Text
 */
 
-var titletext = title.append('text');
+var auto = completely(document.getElementById('Title'), {
+    fontSize : '20px',
+    fontFamily : 'monospace'
+});
 
-titletext.attr('x',(width + hBorder)/2)
-    .attr('y',55)
-    .attr("fill","black")
-    .attr("text-anchor","middle")
-    .attr("class", "title")
-    .text( function (d) { return "Pick an Advice Animal to Begin"; })
+auto.options = templateData.map(function (x) { return x.name })
 
-  
+auto.input.style.fontWeight = "bold"
+
+auto.dropDown.hidden = true;
+
+auto.wrapper.style.transform = "translateX(100px)"
+
+auto.setText("Pick or type and Advice Animal to begin")
+
+auto.input.onclick = function () {
+ auto.setText(""); 
+ auto.onChange();
+}
+
+auto.onEnter = function () {
+ var meme = templateData.filter( function( d ) { return d.name == auto.getText(); } );
+ console.log(meme);
+ changeMeme(meme[0]);
+}
+
+
 /*
 Set Graph
 */
@@ -347,7 +366,6 @@ function update_data(newAnimals, sampleRate) {
     {
       d3.select(this).style("fill", "red")
 
-
       currentTimeNewData = currentTimeData.data([d.ts*1000])
 
       currentTimeNewData.attr("transform", 
@@ -369,12 +387,14 @@ function update_data(newAnimals, sampleRate) {
             return "translate(" + (-700 - leftEnd)/2 + ",0)"
           }
           return "translate(0,0)"
-          } )
-
+          } 
+        )
 
       currentTitleText.text( function (dd) { return d.ti; } )
       currentTitleText.attr("id", "memeName")
-      currentTimeText.text( function (dd) { return new Date(d.ts*1000).toString().substring(0,24) })
+      currentTimeText.text( function (dd) { 
+        return new Date(d.ts*1000).toString().substring(0,24) 
+      })
     })
     .on("click", function(d){
         window.open(
@@ -492,7 +512,7 @@ function changeMeme(d) {
 
   // Do Ajax Query
 
-  titletext.text(d.name) 
+  auto.setText(d.name)
   // If cached, no need to do query.
 
   sampleRate = 1
@@ -513,6 +533,11 @@ function changeMeme(d) {
 
   // Otherwise do query
   xhr = new XMLHttpRequest();
+
+  xhr.onprogress = function () {
+    console.log("Progress")
+  }
+
   xhr.onload = function() {
     logme = xhr.responseText;
     rawData = JSON.parse(logme)
