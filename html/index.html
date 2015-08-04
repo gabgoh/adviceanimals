@@ -152,14 +152,16 @@ function updateList(newdat, sampleRate) {
 Start SVGs Element
 */
 
+leftAlign = "calc(50% - " + (width + hBorder)/2 + "px)";
+
 var title = d3.select("body").append("div")
     .attr("id", "Title")
-    .attr("style", "position:absolute; margin:auto; top: -400px; left: 0px; bottom: 0; right: 0; width:1200px; height:50px; z-index:10")
+    .attr("style", "position:absolute; top: calc(50% - 220px); left: " + leftAlign + "; bottom: 0; right: 0; width:1100px; height:50px; z-index:10")
 
 var svg = d3.select("body").append("svg")
     .attr("width", width + hBorder)
     .attr("height", height + 60)
-    .attr("style", "position:absolute; margin:auto; top: 0; left: 0; bottom: 0; right: 0;")
+    .attr("style", "position:absolute; top: calc(50% - " + (height + 60)/2 + "px); left: " + leftAlign + "; bottom: 0; right: 0;")
     .append("g")
     .attr("transform", "translate(" + (width/2 + hBorder/2)  + "," 
                                     + (height/2 + 30) +  ")");
@@ -167,7 +169,7 @@ var svg = d3.select("body").append("svg")
 var thumbBar = d3.select("body").append("svg")
     .attr("width", width + hBorder)
     .attr("height", 40)
-    .attr("style", "position:absolute; margin:auto; top: 450px; left: 0; bottom: 0; right: 0;")
+    .attr("style", "position:absolute; top: calc(50% + " + (height - 150) + "px); left: " + leftAlign + "; bottom: 0; right: 0;")
 
 /*
 Set Title, and Info Text
@@ -632,7 +634,7 @@ square.append("circle")
 
 </script>
 
-<center style="position:absolute; margin:auto; top: 550px; left: 0; bottom: 0; right: 0; height:10px; font:bold 12px monospace">
+<center style="position:absolute; top: calc(50% + 270px); left: 0; bottom: 0; right: 0; height:10px; font:bold 12px monospace">
 [Making of] by [Gabriel Goh] data provided by [<a href = "https://pushshift.io/"> Jason Baumgartner </a>]
 </center>
 
