@@ -6,6 +6,10 @@ text {
   font: bold 12px monospace;
 }
 
+a {
+    color: #000000;
+}
+
 .redtext {
   font  : bold 12px monospace;
   fill : red
@@ -165,7 +169,6 @@ var thumbBar = d3.select("body").append("svg")
     .attr("height", 40)
     .attr("style", "position:absolute; margin:auto; top: 450px; left: 0; bottom: 0; right: 0;")
 
-
 /*
 Set Title, and Info Text
 */
@@ -188,7 +191,6 @@ loadCircle.append("animate")
           .attr("repeatCount","indefinite")
           .attr("values","1; 0.2; 1");
 
-
 var auto = completely(document.getElementById('Title'), {
     fontSize : '20px',
     fontFamily : 'monospace'
@@ -200,7 +202,7 @@ auto.input.style.fontWeight = "bold"
 
 auto.dropDown.hidden = true;
 
-auto.wrapper.style.transform = "translateX(100px)"
+auto.wrapper.style.transform = "translate(100px,0px)"
 auto.wrapper.style.width = "1100px"
 
 auto.setText("Pick or type and Advice Animal here to begin (e.g. Confession Bear)")
